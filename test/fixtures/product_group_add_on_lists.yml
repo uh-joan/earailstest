@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  displayIndex: 1
+  logicIndex: 1
+  required: false
+
+two:
+  displayIndex: 1
+  logicIndex: 1
+  required: false

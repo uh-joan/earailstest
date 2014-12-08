@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prefixLabelOnline: MyString
+  prefixLabelPrint: MyString
+  prefixLabelPos: MyString
+  postLabelOnline: MyString
+  postLabelPrint: MyString
+  postLabelPos: MyString
+  productCategory_id: 
+
+two:
+  prefixLabelOnline: MyString
+  prefixLabelPrint: MyString
+  prefixLabelPos: MyString
+  postLabelOnline: MyString
+  postLabelPrint: MyString
+  postLabelPos: MyString
+  productCategory_id: 
