@@ -149,6 +149,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="actionmailer (v4.2.0.beta4, ruby-2.0.0-p384) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionpack (v4.2.0.beta4, ruby-2.0.0-p384) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="actionview (v4.2.0.beta4, ruby-2.0.0-p384) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activejob (v4.2.0.beta4, ruby-2.0.0-p384) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activemodel (v4.2.0.beta4, ruby-2.0.0-p384) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activerecord (v4.2.0.beta4, ruby-2.0.0-p384) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="activesupport (v4.2.0.beta4, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ansi (v1.4.3, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="arel (v6.0.0.beta2, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="bcrypt (v3.1.7, ruby-2.0.0-p384) [gem]" level="application" />
@@ -179,6 +186,7 @@
     <orderEntry type="library" scope="PROVIDED" name="fog-softlayer (v0.3.25, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="formatador (v0.2.5, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="globalid (v0.3.0, ruby-2.0.0-p384) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="guard (v2.10.2, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="guard-minitest (v2.3.1, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hike (v1.2.3, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="hitimes (v1.2.2, ruby-2.0.0-p384) [gem]" level="application" />
@@ -209,12 +217,14 @@
     <orderEntry type="library" scope="PROVIDED" name="rack (v1.6.0.beta2, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v0.6.2, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="railroady (v1.2.0, ruby-2.0.0-p384) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rails (v4.2.0.beta4, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-deprecated_sanitizer (v1.0.3, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-dom-testing (v1.0.5, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails-html-sanitizer (v1.0.1, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails_12factor (v0.0.2, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails_serve_static_assets (v0.0.2, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rails_stdout_logging (v0.0.3, ruby-2.0.0-p384) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="railties (v4.2.0.beta4, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="raindrops (v0.13.0, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rake (v10.4.2, ruby-2.0.0-p384) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rb-fsevent (v0.9.4, ruby-2.0.0-p384) [gem]" level="application" />
