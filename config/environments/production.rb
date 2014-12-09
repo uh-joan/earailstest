@@ -60,7 +60,7 @@ Rails.application.configure do
 
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  host = 'eaccess.herokuapp.com'
+  host = 'infinite-refuge-2006.herokuapp.com'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
       :address        => 'smtp.sendgrid.net',
