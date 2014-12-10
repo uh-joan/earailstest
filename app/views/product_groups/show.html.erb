@@ -57,7 +57,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @product_group.user %>
+  <%= User.find(@product_group.user_id) %>
 </p>
 
 <p>

@@ -22,8 +22,8 @@
         <td><%= product_group_add_on_list.displayIndex %></td>
         <td><%= product_group_add_on_list.logicIndex %></td>
         <td><%= product_group_add_on_list.required %></td>
-        <td><%= product_group_add_on_list.product_group %></td>
-        <td><%= product_group_add_on_list.user %></td>
+        <td><%= ProductGroup.find(product_group_add_on_list.product_group_id) %></td>
+        <td><%= User.find(product_group_add_on_list.user_id) %></td>
         <td><%= link_to 'Show', product_group_add_on_list %></td>
         <td><%= link_to 'Edit', edit_product_group_add_on_list_path(product_group_add_on_list) %></td>
         <td><%= link_to 'Destroy', product_group_add_on_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -69,6 +69,10 @@ class User < ActiveRecord::Base
     reset_sent_at < 2.hours.ago
   end
 
+  # def serializable_hash (options = nil)
+  #   super({only: [:id, :name, :email]}.merge(options || {}))
+  # end
+
   private
 
   # Converts email to all lower-case.
@@ -81,4 +85,6 @@ class User < ActiveRecord::Base
     self.activation_token  = User.new_token
     self.activation_digest = User.digest(activation_token)
   end
+
+
 end

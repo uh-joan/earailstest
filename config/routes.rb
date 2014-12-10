@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :products
+
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'account_activations/edit'
@@ -22,4 +24,14 @@ Rails.application.routes.draw do
   resources :product_add_on_lists
   resources :product_add_on_list_items
   resources :product_add_ons
+
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      # get 'products#index'
+      resources :product_categories
+      resources :users
+      resources :product_category_sizes
+      resources :products
+    end
+  end
 end

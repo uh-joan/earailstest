@@ -22,12 +22,12 @@
 
 <p>
   <strong>Product group:</strong>
-  <%= @product_group_add_on_list.product_group %>
+  <%= ProductGroup.find(@product_group_add_on_list.product_group_id) %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @product_group_add_on_list.user %>
+  <%= User.find(@product_group_add_on_list.user_id) %>
 </p>
 
 <%= link_to 'Edit', edit_product_group_add_on_list_path(@product_group_add_on_list) %> |

@@ -17,6 +17,8 @@ gem 'turbolinks',              '2.3.0'
 gem 'jbuilder',                '2.2.3'
 gem 'arel',                    '6.0.0.beta2'
 gem 'railroady'
+gem 'responders',              '~> 2.0'
+gem 'active_model_serializers','~> 0.9.0'
 gem 'sdoc',                    '0.4.0', group: :doc
 
 group :development, :test do
