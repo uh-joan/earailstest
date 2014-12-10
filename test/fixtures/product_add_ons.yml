@@ -3,8 +3,8 @@
 one:
   name: MyString
   onlineViewLabel: MyString
+  printViewLabel: MyString
   posViewLabel: MyString
-  printLabel: MyString
   displayIndex: 1
   visibleOnline: false
   visiblePos: false
@@ -13,8 +13,8 @@ one:
 two:
   name: MyString
   onlineViewLabel: MyString
+  printViewLabel: MyString
   posViewLabel: MyString
-  printLabel: MyString
   displayIndex: 1
   visibleOnline: false
   visiblePos: false

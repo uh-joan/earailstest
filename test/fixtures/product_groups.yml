@@ -3,7 +3,8 @@
 one:
   name: MyString
   description: MyString
-  onlineViewLabel: false
+  onlineViewLabel: MyString
+  posViewLabel: MyString
   posViewLabel: MyString
   headerImagePath: MyString
   displayIndex: 1
@@ -12,11 +13,13 @@ one:
   enabled: false
   deleted: false
   user_id: 
+  product_category_id: 
 
 two:
   name: MyString
   description: MyString
-  onlineViewLabel: false
+  onlineViewLabel: MyString
+  posViewLabel: MyString
   posViewLabel: MyString
   headerImagePath: MyString
   displayIndex: 1
@@ -25,3 +28,4 @@ two:
   enabled: false
   deleted: false
   user_id: 
+  product_category_id: 

@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141209163944) do
+ActiveRecord::Schema.define(version: 20141210105823) do
 
   create_table "product_add_on_list_items", force: true do |t|
     t.integer  "user_id"
     t.integer  "product_add_on_list_id"
     t.integer  "product_add_on_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "product_add_on_list_items", ["user_id"], name: "index_product_add_on_list_items_on_user_id"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20141209163944) do
     t.boolean  "multipleSelection"
     t.boolean  "enabled"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   add_index "product_add_on_lists", ["user_id"], name: "index_product_add_on_lists_on_user_id"
@@ -41,14 +41,14 @@ ActiveRecord::Schema.define(version: 20141209163944) do
   create_table "product_add_ons", force: true do |t|
     t.string   "name"
     t.string   "onlineViewLabel"
+    t.string   "printViewLabel"
     t.string   "posViewLabel"
-    t.string   "printLabel"
     t.integer  "displayIndex"
     t.boolean  "visibleOnline"
     t.boolean  "visiblePos"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "product_add_ons", ["user_id"], name: "index_product_add_ons_on_user_id"
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(version: 20141209163944) do
     t.boolean  "enabled"
     t.boolean  "deleted"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_index "product_categories", ["user_id"], name: "index_product_categories_on_user_id"
@@ -69,33 +69,34 @@ ActiveRecord::Schema.define(version: 20141209163944) do
     t.string   "prefixLabelOnline"
     t.string   "prefixLabelPrint"
     t.string   "prefixLabelPos"
-    t.string   "postLabelOnline"
-    t.string   "postLabelPrint"
-    t.string   "postLabelPos"
+    t.string   "postfixLabelOnline"
+    t.string   "postfixLabelPrint"
+    t.string   "postfixLabelPos"
     t.integer  "productCategory_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   add_index "product_category_sizes", ["productCategory_id"], name: "index_product_category_sizes_on_productCategory_id"
 
   create_table "product_group_add_on_lists", force: true do |t|
+    t.string   "name"
     t.integer  "displayIndex"
     t.integer  "logicIndex"
     t.boolean  "required"
     t.integer  "product_group_id"
-    t.integer  "product_group_add_on_list_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
+  add_index "product_group_add_on_lists", ["product_group_id"], name: "index_product_group_add_on_lists_on_product_group_id"
   add_index "product_group_add_on_lists", ["user_id"], name: "index_product_group_add_on_lists_on_user_id"
 
   create_table "product_groups", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.boolean  "onlineViewLabel"
+    t.string   "onlineViewLabel"
     t.string   "posViewLabel"
     t.string   "headerImagePath"
     t.integer  "displayIndex"
@@ -103,12 +104,13 @@ ActiveRecord::Schema.define(version: 20141209163944) do
     t.boolean  "visibleOnPos"
     t.boolean  "enabled"
     t.boolean  "deleted"
-    t.integer  "product_category_id"
     t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "product_category_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
+  add_index "product_groups", ["product_category_id"], name: "index_product_groups_on_product_category_id"
   add_index "product_groups", ["user_id"], name: "index_product_groups_on_user_id"
 
   create_table "users", force: true do |t|

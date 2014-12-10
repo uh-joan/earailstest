@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@product_add_on_list_item.user_id).name %>
+</p>
+
+<p>
+  <strong>product_add_on_list:</strong>
+  <%= ProductAddOnList.find(@product_add_on_list_item.product_add_on_list_id).name %>
+</p>
+
+<p>
+  <strong>product_add_on:</strong>
+  <%= ProductAddOn.find(@product_add_on_list_item.product_add_on_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_product_add_on_list_item_path(@product_add_on_list_item) %> |
+<%= link_to 'Back', product_add_on_list_items_path %>

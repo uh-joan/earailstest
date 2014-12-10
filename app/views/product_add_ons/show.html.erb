@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product_add_on.name %>
+</p>
+
+<p>
+  <strong>Onlineviewlabel:</strong>
+  <%= @product_add_on.onlineViewLabel %>
+</p>
+
+<p>
+  <strong>Printviewlabel:</strong>
+  <%= @product_add_on.printViewLabel %>
+</p>
+
+<p>
+  <strong>Posviewlabel:</strong>
+  <%= @product_add_on.posViewLabel %>
+</p>
+
+<p>
+  <strong>Displayindex:</strong>
+  <%= @product_add_on.displayIndex %>
+</p>
+
+<p>
+  <strong>Visibleonline:</strong>
+  <%= @product_add_on.visibleOnline %>
+</p>
+
+<p>
+  <strong>Visiblepos:</strong>
+  <%= @product_add_on.visiblePos %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%=  User.find_by_id(@product_add_on.user_id).name  %>
+</p>
+
+<%= link_to 'Edit', edit_product_add_on_path(@product_add_on) %> |
+<%= link_to 'Back', product_add_ons_path %>

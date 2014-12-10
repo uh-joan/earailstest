@@ -4,12 +4,12 @@ class CreateProductCategorySizes < ActiveRecord::Migration
       t.string :prefixLabelOnline
       t.string :prefixLabelPrint
       t.string :prefixLabelPos
-      t.string :postLabelOnline
-      t.string :postLabelPrint
-      t.string :postLabelPos
+      t.string :postfixLabelOnline
+      t.string :postfixLabelPrint
+      t.string :postfixLabelPos
       t.references :productCategory, index: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

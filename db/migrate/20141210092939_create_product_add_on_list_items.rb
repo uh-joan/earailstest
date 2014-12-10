@@ -5,7 +5,7 @@ class CreateProductAddOnListItems < ActiveRecord::Migration
       t.belongs_to :product_add_on_list
       t.belongs_to :product_add_on
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

@@ -1,0 +1,45 @@
+<%= form_for(@product_category_size) do |f| %>
+  <% if @product_category_size.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product_category_size.errors.count, "error") %> prohibited this product_category_size from being saved:</h2>
+
+      <ul>
+      <% @product_category_size.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :prefixLabelOnline %><br>
+    <%= f.text_field :prefixLabelOnline %>
+  </div>
+  <div class="field">
+    <%= f.label :prefixLabelPrint %><br>
+    <%= f.text_field :prefixLabelPrint %>
+  </div>
+  <div class="field">
+    <%= f.label :prefixLabelPos %><br>
+    <%= f.text_field :prefixLabelPos %>
+  </div>
+  <div class="field">
+    <%= f.label :postfixLabelOnline %><br>
+    <%= f.text_field :postfixLabelOnline %>
+  </div>
+  <div class="field">
+    <%= f.label :postfixLabelPrint %><br>
+    <%= f.text_field :postfixLabelPrint %>
+  </div>
+  <div class="field">
+    <%= f.label :postfixLabelPos %><br>
+    <%= f.text_field :postfixLabelPos %>
+  </div>
+  <div class="field">
+    <%= f.label :productCategory_id %><br>
+    <%= f.text_field :productCategory_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

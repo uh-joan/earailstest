@@ -10,7 +10,7 @@ class CreateProductAddOnLists < ActiveRecord::Migration
       t.boolean :enabled
       t.references :user, index: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

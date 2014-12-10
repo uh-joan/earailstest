@@ -4,16 +4,16 @@ one:
   prefixLabelOnline: MyString
   prefixLabelPrint: MyString
   prefixLabelPos: MyString
-  postLabelOnline: MyString
-  postLabelPrint: MyString
-  postLabelPos: MyString
+  postfixLabelOnline: MyString
+  postfixLabelPrint: MyString
+  postfixLabelPos: MyString
   productCategory_id: 
 
 two:
   prefixLabelOnline: MyString
   prefixLabelPrint: MyString
   prefixLabelPos: MyString
-  postLabelOnline: MyString
-  postLabelPrint: MyString
-  postLabelPos: MyString
+  postfixLabelOnline: MyString
+  postfixLabelPrint: MyString
+  postfixLabelPos: MyString
   productCategory_id: 

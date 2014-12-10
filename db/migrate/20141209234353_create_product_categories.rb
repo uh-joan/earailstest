@@ -7,7 +7,7 @@ class CreateProductCategories < ActiveRecord::Migration
       t.boolean :deleted
       t.references :user, index: true
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

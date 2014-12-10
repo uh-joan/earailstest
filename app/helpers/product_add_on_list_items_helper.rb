@@ -1,0 +1,2 @@
+module ProductAddOnListItemsHelper
+end
