@@ -27,7 +27,7 @@
         <td><%= product_add_on_list.sortListByName %></td>
         <td><%= product_add_on_list.multipleSelection %></td>
         <td><%= product_add_on_list.enabled %></td>
-        <td><%=  User.find_by_id(product_add_on_list.user_id).name %></td>
+        <td><%=  User.find(product_add_on_list.user_id).name %></td>
         <td><%= link_to 'Show', product_add_on_list %></td>
         <td><%= link_to 'Edit', edit_product_add_on_list_path(product_add_on_list) %></td>
         <td><%= link_to 'Destroy', product_add_on_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -25,7 +25,7 @@
         <td><%= product_category_size.postfixLabelOnline %></td>
         <td><%= product_category_size.postfixLabelPrint %></td>
         <td><%= product_category_size.postfixLabelPos %></td>
-        <td><%= ProductCategory.find_by_id(product_category_size.productCategory_id).name %></td>
+        <td><%= ProductCategory.find(product_category_size.productCategory_id).name %></td>
         <td><%= link_to 'Show', product_category_size %></td>
         <td><%= link_to 'Edit', edit_product_category_size_path(product_category_size) %></td>
         <td><%= link_to 'Destroy', product_category_size, method: :delete, data: { confirm: 'Are you sure?' } %></td>

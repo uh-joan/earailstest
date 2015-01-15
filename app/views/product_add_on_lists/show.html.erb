@@ -37,7 +37,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= User.find_by_id(@product_add_on_list.user_id).name %>
+  <%= User.find(@product_add_on_list.user_id).name %>
 </p>
 
 <%= link_to 'Edit', edit_product_add_on_list_path(@product_add_on_list) %> |

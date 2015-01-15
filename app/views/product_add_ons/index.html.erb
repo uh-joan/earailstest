@@ -27,7 +27,7 @@
         <td><%= product_add_on.displayIndex %></td>
         <td><%= product_add_on.visibleOnline %></td>
         <td><%= product_add_on.visiblePos %></td>
-        <td><%= User.find_by_id(product_add_on.user_id).name %></td>
+        <td><%= User.find(product_add_on.user_id).name %></td>
         <td><%= link_to 'Show', product_add_on %></td>
         <td><%= link_to 'Edit', edit_product_add_on_path(product_add_on) %></td>
         <td><%= link_to 'Destroy', product_add_on, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -32,7 +32,7 @@
 
 <p>
   <strong>Productcategory:</strong>
-  <%= ProductCategory.find_by_id(@product_category_size.productCategory_id).name %>
+  <%= ProductCategory.find(@product_category_size.productCategory_id).name %>
 </p>
 
 <%= link_to 'Edit', edit_product_category_size_path(@product_category_size) %> |
