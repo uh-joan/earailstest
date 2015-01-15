@@ -40,4 +40,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # adapter= postgresql
+  # hostDB= ec2-79-125-21-60.eu-west-1.compute.amazonaws.com
+  # username= dxfujfxyvhlawd
+  # database= dnsecjspoiqikv
 end
