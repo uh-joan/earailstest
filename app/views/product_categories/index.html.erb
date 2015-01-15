@@ -21,7 +21,8 @@
         <td><%= product_category.shortDescription %></td>
         <td><%= product_category.enabled %></td>
         <td><%= product_category.deleted %></td>
-        <td><%= User.find_by_id(product_category.user_id).name %></td>
+        <td><%= product_category.user_id %></td>
+        <!--User.find_by_id(product_category.user_id).name-->
         <td><%= link_to 'Show', product_category %></td>
         <td><%= link_to 'Edit', edit_product_category_path(product_category) %></td>
         <td><%= link_to 'Destroy', product_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
