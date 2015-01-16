@@ -14,10 +14,13 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :product_categories
+  get '/product_categories', to: 'product_categories#index', as: 'product_categories_path'
+  get '/product_category_sizes', to: 'product_category_sizes#index', as: 'product_category_sizes_path'
   resources :product_category_sizes
   resources :product_group_add_on_lists
   resources :product_groups
