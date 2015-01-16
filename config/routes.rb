@@ -20,13 +20,18 @@ Rails.application.routes.draw do
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :product_categories
   get '/product_categories', to: 'product_categories#index', as: 'product_categories_path'
-  get '/product_category_sizes', to: 'product_category_sizes#index', as: 'product_category_sizes_path'
   resources :product_category_sizes
+  get '/product_category_sizes', to: 'product_category_sizes#index', as: 'product_category_sizes_path'
   resources :product_group_add_on_lists
+  get '/product_group_add_on_lists', to: 'product_group_add_on_lists#index', as: 'product_group_add_on_lists_path'
   resources :product_groups
+  get '/product_groups', to: 'product_groups#index', as: 'product_groups_path'
   resources :product_add_on_lists
+  get '/product_add_on_lists', to: 'product_add_on_lists#index', as: 'product_add_on_lists_path'
   resources :product_add_on_list_items
+  get '/product_add_on_list_items', to: 'product_add_on_list_items#index', as: 'product_add_on_list_items_path'
   resources :product_add_ons
+  get '/product_add_ons', to: 'product_add_ons#index', as: 'product_add_ons_path'
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
