@@ -1,0 +1,2 @@
+module ProductGroupAddOnListPricesHelper
+end

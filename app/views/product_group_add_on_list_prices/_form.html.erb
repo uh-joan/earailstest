@@ -1,0 +1,53 @@
+<%= form_for(@product_group_add_on_list_price) do |f| %>
+  <% if @product_group_add_on_list_price.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product_group_add_on_list_price.errors.count, "error") %> prohibited this product_group_add_on_list_price from being saved:</h2>
+
+      <ul>
+      <% @product_group_add_on_list_price.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </div>
+  <div class="field">
+    <%= f.label :prices %><br>
+    <%= f.text_field :prices %>
+  </div>
+  <div class="field">
+    <%= f.label :enabled %><br>
+    <%= f.check_box :enabled %>
+  </div>
+  <div class="field">
+    <%= f.label :deleted %><br>
+    <%= f.check_box :deleted %>
+  </div>
+  <div class="field">
+    <%= f.label :product_group_id %><br>
+    <%= f.text_field :product_group_id %>
+  </div>
+  <div class="field">
+    <%= f.label :product_group_add_on_list_id %><br>
+    <%= f.text_field :pr_gr_adon_li_id %>
+  </div>
+  <div class="field">
+    <%= f.label :product_add_on_id %><br>
+    <%= f.text_field :product_add_on_id %>
+  </div>
+  <div class="field">
+    <%= f.label :product_category_size_id %><br>
+    <%= f.text_field :pr_cat_size_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

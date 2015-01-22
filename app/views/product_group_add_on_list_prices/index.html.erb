@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Product Group Add On List Prices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cost</th>
+      <th>**Prices</th>
+      <th>**Enabled</th>
+      <th>**Deleted</th>
+      <th>**Product group</th>
+      <th>**Product group add on list</th>
+      <th>**Product add on</th>
+      <th>**Product category size</th>
+      <th>**User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @product_group_add_on_list_prices.each do |product_group_add_on_list_price| %>
+      <tr>
+        <td><%= product_group_add_on_list_price.cost %></td>
+        <td><%= product_group_add_on_list_price.prices %></td>
+        <td><%= product_group_add_on_list_price.enabled %></td>
+        <td><%= product_group_add_on_list_price.deleted %></td>
+        <td><%= ProductGroup.find(product_group_add_on_list_price.product_group_id).name %></td>
+        <td><%= ProductGroupAddOnList.find(product_group_add_on_list_price.pr_gr_adon_li_id).name %></td>
+        <td><%= ProductAddOn.find(product_group_add_on_list_price.product_add_on_id).name %></td>
+        <td><%= ProductCategorySize.find(product_group_add_on_list_price.pr_cat_size_id).name %></td>
+        <td><%= User.find(product_group_add_on_list_price.user_id).name %></td>
+        <td><%= link_to 'Show', product_group_add_on_list_price %></td>
+        <td><%= link_to 'Edit', edit_product_group_add_on_list_price_path(product_group_add_on_list_price) %></td>
+        <td><%= link_to 'Destroy', product_group_add_on_list_price, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product group add on list price', new_product_group_add_on_list_price_path %>

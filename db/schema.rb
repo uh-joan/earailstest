@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141210105823) do
+ActiveRecord::Schema.define(version: 20150122172418) do
+
+  create_table "create_product_items", force: true do |t|
+    t.string   "name"
+    t.boolean  "enabled"
+    t.boolean  "deleted"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "create_product_items", ["user_id"], name: "index_create_product_items_on_user_id"
 
   create_table "product_add_on_list_items", force: true do |t|
     t.integer  "user_id"
@@ -72,12 +83,32 @@ ActiveRecord::Schema.define(version: 20141210105823) do
     t.string   "postfixLabelOnline"
     t.string   "postfixLabelPrint"
     t.string   "postfixLabelPos"
-    t.integer  "productCategory_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "product_category_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
-  add_index "product_category_sizes", ["productCategory_id"], name: "index_product_category_sizes_on_productCategory_id"
+  add_index "product_category_sizes", ["product_category_id"], name: "index_product_category_sizes_on_product_category_id"
+
+  create_table "product_group_add_on_list_prices", force: true do |t|
+    t.string   "cost"
+    t.float    "prices"
+    t.boolean  "enabled"
+    t.boolean  "deleted"
+    t.integer  "product_group_id"
+    t.integer  "pr_gr_adon_li_id"
+    t.integer  "product_add_on_id"
+    t.integer  "pr_cat_size_id"
+    t.integer  "user_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "product_group_add_on_list_prices", ["pr_cat_size_id"], name: "index_product_group_add_on_list_prices_on_pr_cat_size_id"
+  add_index "product_group_add_on_list_prices", ["pr_gr_adon_li_id"], name: "index_product_group_add_on_list_prices_on_pr_gr_adon_li_id"
+  add_index "product_group_add_on_list_prices", ["product_add_on_id"], name: "index_product_group_add_on_list_prices_on_product_add_on_id"
+  add_index "product_group_add_on_list_prices", ["product_group_id"], name: "index_product_group_add_on_list_prices_on_product_group_id"
+  add_index "product_group_add_on_list_prices", ["user_id"], name: "index_product_group_add_on_list_prices_on_user_id"
 
   create_table "product_group_add_on_lists", force: true do |t|
     t.string   "name"
@@ -112,6 +143,30 @@ ActiveRecord::Schema.define(version: 20141210105823) do
 
   add_index "product_groups", ["product_category_id"], name: "index_product_groups_on_product_category_id"
   add_index "product_groups", ["user_id"], name: "index_product_groups_on_user_id"
+
+  create_table "product_item_types", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "product_item_types", ["user_id"], name: "index_product_item_types_on_user_id"
+
+  create_table "product_items", force: true do |t|
+    t.string   "name"
+    t.boolean  "enabled"
+    t.boolean  "deleted"
+    t.integer  "user_id"
+    t.integer  "product_group_id"
+    t.integer  "product_item_type_id"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "product_items", ["product_group_id"], name: "index_product_items_on_product_group_id"
+  add_index "product_items", ["product_item_type_id"], name: "index_product_items_on_product_item_type_id"
+  add_index "product_items", ["user_id"], name: "index_product_items_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

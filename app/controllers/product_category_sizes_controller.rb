@@ -74,6 +74,6 @@ class ProductCategorySizesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_category_size_params
-      params.require(:product_category_size).permit(:prefixLabelOnline, :prefixLabelPrint, :prefixLabelPos, :postfixLabelOnline, :postfixLabelPrint, :postfixLabelPos, :productCategory_id)
+      params.require(:product_category_size).permit(:prefixLabelOnline, :prefixLabelPrint, :prefixLabelPos, :postfixLabelOnline, :postfixLabelPrint, :postfixLabelPos, :product_category_id)
     end
 end

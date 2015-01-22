@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cost: MyString
+  prices: 1.5
+  enabled: false
+  deleted: false
+  product_group_id: 
+  pr_gr_adon_li_id: 
+  product_add_on_id: 
+  pr_cat_size_id: 
+  user_id: 
+
+two:
+  cost: MyString
+  prices: 1.5
+  enabled: false
+  deleted: false
+  product_group_id: 
+  pr_gr_adon_li_id: 
+  product_add_on_id: 
+  pr_cat_size_id: 
+  user_id: 

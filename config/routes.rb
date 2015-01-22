@@ -32,6 +32,12 @@ Rails.application.routes.draw do
   get '/product_add_on_list_items', to: 'product_add_on_list_items#index', as: 'product_add_on_list_items_path'
   resources :product_add_ons
   get '/product_add_ons', to: 'product_add_ons#index', as: 'product_add_ons_path'
+  resources :product_items
+  get '/product_items', to: 'product_items#index', as: 'product_items_path'
+  resources :product_item_types
+  get '/product_item_types', to: 'product_item_types#index', as: 'product_item_types_path'
+  resources :product_group_add_on_list_prices
+  get '/product_group_add_on_list_prices', to: 'product_group_add_on_list_prices#index', as: 'product_group_add_on_list_prices_path'
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do

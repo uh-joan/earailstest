@@ -7,7 +7,7 @@ class CreateProductCategorySizes < ActiveRecord::Migration
       t.string :postfixLabelOnline
       t.string :postfixLabelPrint
       t.string :postfixLabelPos
-      t.references :productCategory, index: true
+      t.references :product_category, index: true
 
       t.timestamps null: false
     end
