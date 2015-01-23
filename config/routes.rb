@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+
+
   resources :products
 
   get 'password_resets/new'
@@ -16,10 +19,13 @@ Rails.application.routes.draw do
   delete 'logout'  => 'sessions#destroy'
 
   resources :users
+  resources :user_types
+  get '/user_types', to: 'user_types#index', as: 'user_types_path'
+
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :product_categories
-  get '/product_categories', to: 'product_categories#index', as: 'product_categories_path'
+  resources :categories
+  get '/Categories', to: 'Categories#index', as: 'product_categories_path'
   resources :product_category_sizes
   get '/product_category_sizes', to: 'product_category_sizes#index', as: 'product_category_sizes_path'
   resources :product_group_add_on_lists
@@ -38,11 +44,26 @@ Rails.application.routes.draw do
   get '/product_item_types', to: 'product_item_types#index', as: 'product_item_types_path'
   resources :product_group_add_on_list_prices
   get '/product_group_add_on_list_prices', to: 'product_group_add_on_list_prices#index', as: 'product_group_add_on_list_prices_path'
+  resources :product_item_sizes
+  get '/product_item_sizes', to: 'product_item_sizes#index', as: 'product_item_sizes_path'
+
+
+  resources :sales_order_types
+  get '/sales_order_types', to: 'sales_order_types#index', as: 'sales_order_types_path'
+  resources :sales_order_sources
+  get '/sales_order_sources', to: 'sales_order_sources#index', as: 'sales_order_sources_path'
+  resources :sales_order_statuses
+  get '/sales_order_statuses', to: 'sales_order_statuses#index', as: 'sales_order_statuses_path'
+  resources :sales_orders
+  get '/sales_orders', to: 'sales_orders#index', as: 'sales_orders_path'
+
+
+
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       # get 'products#index'
-      resources :product_categories
+      resources :categories
       resources :users
       resources :product_category_sizes
       resources :products

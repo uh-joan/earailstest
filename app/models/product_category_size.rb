@@ -1,10 +1,10 @@
 class ProductCategorySize < ActiveRecord::Base
-  belongs_to :product_category
+  belongs_to :category
 
   # def serializable_hash(options = nil)
   #   super({only: [:id, :prefixLabelOnline, :prefixLabelPrint, :prefixLabelPos,
   #                 :postfixLabelOnline, :postfixLabelPrint, :postfixLabelPos],
-  #          include: :product_category}.merge(options || {}))
+  #          include: :category}.merge(options || {}))
   # end
 
 end

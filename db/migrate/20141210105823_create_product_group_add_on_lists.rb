@@ -7,6 +7,7 @@ class CreateProductGroupAddOnLists < ActiveRecord::Migration
       t.boolean :required
       t.references :product_group, index: true
       t.references :user, index: true
+      t.references :product_add_on_list, index: true
 
       t.timestamps null: false
     end

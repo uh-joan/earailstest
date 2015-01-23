@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sales Order Sources</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales_order_sources.each do |sales_order_source| %>
+      <tr>
+        <td><%= sales_order_source.name %></td>
+        <td><%= User.find(sales_order_source.user_id).name %></td>
+        <td><%= link_to 'Show', sales_order_source %></td>
+        <td><%= link_to 'Edit', edit_sales_order_source_path(sales_order_source) %></td>
+        <td><%= link_to 'Destroy', sales_order_source, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sales order source', new_sales_order_source_path %>

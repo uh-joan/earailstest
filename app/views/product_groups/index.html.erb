@@ -37,7 +37,7 @@
         <td><%= product_group.enabled %></td>
         <td><%= product_group.deleted %></td>
         <td><%= User.find(product_group.user_id).name %></td>
-        <td><%= ProductCategory.find(product_group.product_category_id).name %></td>
+        <td><%= Category.find(product_group.product_category_id).name %></td>
         <td><%= link_to 'Show', product_group %></td>
         <td><%= link_to 'Edit', edit_product_group_path(product_group) %></td>
         <td><%= link_to 'Destroy', product_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -13,7 +13,7 @@ class CreateProductGroups < ActiveRecord::Migration
       t.boolean :enabled
       t.boolean :deleted
       t.references :user, index: true
-      t.references :product_category, index: true
+      t.references :category, index: true
 
       t.timestamps null: false
     end

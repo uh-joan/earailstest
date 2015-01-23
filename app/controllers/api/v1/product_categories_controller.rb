@@ -4,11 +4,11 @@ module Api
       respond_to :json
 
       def index
-        # @productCategories = ProductCategory.all
+        # @productCategories = Category.all
         # @productCategorySizes = @productCategorySizes.all
         
-        respond_with ProductCategory.all.to_json
-        # render json: ProductCategory.all
+        respond_with Category.all.to_json
+        # render json: Category.all
       end
 
     end

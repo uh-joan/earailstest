@@ -6,7 +6,7 @@ class CreateProductGroupAddOnListPrices < ActiveRecord::Migration
       t.boolean :enabled
       t.boolean :deleted
       t.references :product_group, index: true
-      t.references :pr_gr_adon_li, index: true
+      t.references :pr_gr_adon_li, index: true,
       t.references :product_add_on, index: true
       t.references :pr_cat_size, index: true
       t.references :user, index: true

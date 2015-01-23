@@ -24,7 +24,7 @@ class ProductCategorySizesController < ApplicationController
   # POST /product_category_sizes
   # POST /product_category_sizes.json
   def create
-    # @product_category = current_user.product_categories.build(product_category_params)
+    # @category = current_user.Categories.build(product_category_params)
     #
     # how to find the current product catgory??
     #

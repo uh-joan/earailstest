@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sales_order_type.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@sales_order_type.user_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_sales_order_type_path(@sales_order_type) %> |
+<%= link_to 'Back', sales_order_types_path %>

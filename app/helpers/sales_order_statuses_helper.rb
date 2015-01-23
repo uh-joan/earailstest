@@ -1,0 +1,2 @@
+module SalesOrderStatusesHelper
+end

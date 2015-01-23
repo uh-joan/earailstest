@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122172418) do
+ActiveRecord::Schema.define(version: 20150123120723) do
 
   create_table "create_product_items", force: true do |t|
     t.string   "name"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20150122172418) do
 
   add_index "product_add_ons", ["user_id"], name: "index_product_add_ons_on_user_id"
 
-  create_table "product_categories", force: true do |t|
+  create_table "Categories", force: true do |t|
     t.string   "name"
     t.string   "shortDescription"
     t.boolean  "enabled"
@@ -144,6 +144,17 @@ ActiveRecord::Schema.define(version: 20150122172418) do
   add_index "product_groups", ["product_category_id"], name: "index_product_groups_on_product_category_id"
   add_index "product_groups", ["user_id"], name: "index_product_groups_on_user_id"
 
+  create_table "product_item_sizes", force: true do |t|
+    t.string   "name"
+    t.integer  "product_item_id"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "product_item_sizes", ["product_item_id"], name: "index_product_item_sizes_on_product_item_id"
+  add_index "product_item_sizes", ["user_id"], name: "index_product_item_sizes_on_user_id"
+
   create_table "product_item_types", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -167,6 +178,54 @@ ActiveRecord::Schema.define(version: 20150122172418) do
   add_index "product_items", ["product_group_id"], name: "index_product_items_on_product_group_id"
   add_index "product_items", ["product_item_type_id"], name: "index_product_items_on_product_item_type_id"
   add_index "product_items", ["user_id"], name: "index_product_items_on_user_id"
+
+  create_table "sales_order_sources", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "sales_order_sources", ["user_id"], name: "index_sales_order_sources_on_user_id"
+
+  create_table "sales_order_statuses", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "sales_order_statuses", ["user_id"], name: "index_sales_order_statuses_on_user_id"
+
+  create_table "sales_order_types", force: true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "sales_order_types", ["user_id"], name: "index_sales_order_types_on_user_id"
+
+  create_table "sales_orders", force: true do |t|
+    t.string   "name"
+    t.float    "total"
+    t.float    "subtotal"
+    t.float    "discount"
+    t.float    "surcharge"
+    t.boolean  "enabled"
+    t.boolean  "deleted"
+    t.integer  "sales_order_type_id"
+    t.integer  "sales_order_status_id"
+    t.integer  "sales_order_source_id"
+    t.integer  "user_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "sales_orders", ["sales_order_source_id"], name: "index_sales_orders_on_sales_order_source_id"
+  add_index "sales_orders", ["sales_order_status_id"], name: "index_sales_orders_on_sales_order_status_id"
+  add_index "sales_orders", ["sales_order_type_id"], name: "index_sales_orders_on_sales_order_type_id"
+  add_index "sales_orders", ["user_id"], name: "index_sales_orders_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

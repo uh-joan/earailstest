@@ -16,7 +16,7 @@ module Api
         respond_with ProductCategorySizeSerializer.new(ProductCategorySize.first).as_json
 
         # ProductCategorySizeSerializer.new(ProductCategorySize.first).as_json
-        # render json: ProductCategory.all
+        # render json: Category.all
       end
 
     end
