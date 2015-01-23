@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @group_addon_list_price.cost %>
+</p>
+
+<p>
+  <strong>Prices:</strong>
+  <%= @group_addon_list_price.prices %>
+</p>
+
+<p>
+  <strong>Enabled:</strong>
+  <%= @group_addon_list_price.enabled %>
+</p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @group_addon_list_price.deleted %>
+</p>
+
+<p>
+  <strong>Product group:</strong>
+  <%= Group.find(@group_addon_list_price.product_group_id).name %>
+</p>
+
+<p>
+  <strong>Product group add on list:</strong>
+  <%= GroupAddonList.find(@group_addon_list_price.pr_gr_adon_li_id).name %>
+</p>
+
+<p>
+  <strong>Product add on:</strong>
+  <%= Addon.find(@group_addon_list_price.product_add_on_id).name %>
+</p>
+
+<p>
+  <strong>Product category size:</strong>
+  <%= CategorySize.find(@group_addon_list_price.pr_cat_size_id).name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@group_addon_list_price.user_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_product_group_add_on_list_price_path(@group_addon_list_price) %> |
+<%= link_to 'Back', product_group_add_on_list_prices_path %>

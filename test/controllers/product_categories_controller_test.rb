@@ -2,13 +2,13 @@ require 'test_helper'
 
 class ProductCategoriesControllerTest < ActionController::TestCase
   setup do
-    @category = product_categories(:one)
+    @top_category = product_categories(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:Categories)
+    assert_not_nil assigns(:TopCategories)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class ProductCategoriesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create category" do
-    assert_difference('Category.count') do
-      post :create, category: { deleted: @category.deleted, enabled: @category.enabled, name: @category.name, shortDescription: @category.shortDescription, user_id: @category.user_id }
+  test "should create top_category" do
+    assert_difference('TopCategory.count') do
+      post :create, top_category: { deleted: @top_category.deleted, enabled: @top_category.enabled, name: @top_category.name, shortDescription: @top_category.shortDescription, user_id: @top_category.user_id }
     end
 
-    assert_redirected_to product_category_path(assigns(:category))
+    assert_redirected_to product_category_path(assigns(:top_category))
   end
 
-  test "should show category" do
-    get :show, id: @category
+  test "should show top_category" do
+    get :show, id: @top_category
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @category
+    get :edit, id: @top_category
     assert_response :success
   end
 
-  test "should update category" do
-    patch :update, id: @category, category: { deleted: @category.deleted, enabled: @category.enabled, name: @category.name, shortDescription: @category.shortDescription, user_id: @category.user_id }
-    assert_redirected_to product_category_path(assigns(:category))
+  test "should update top_category" do
+    patch :update, id: @top_category, top_category: { deleted: @top_category.deleted, enabled: @top_category.enabled, name: @top_category.name, shortDescription: @top_category.shortDescription, user_id: @top_category.user_id }
+    assert_redirected_to product_category_path(assigns(:top_category))
   end
 
-  test "should destroy category" do
-    assert_difference('Category.count', -1) do
-      delete :destroy, id: @category
+  test "should destroy top_category" do
+    assert_difference('TopCategory.count', -1) do
+      delete :destroy, id: @top_category
     end
 
     assert_redirected_to product_categories_path

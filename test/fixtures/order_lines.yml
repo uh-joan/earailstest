@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: MyString
+  dealText: MyString
+  customerNote: MyString
+  total: 1.5
+  price: 1.5
+  discount: 1.5
+  addonCost: 1.5
+  quantity: 1.5
+  deleted: false
+  order_id: 
+  user_id: 
+
+two:
+  text: MyString
+  dealText: MyString
+  customerNote: MyString
+  total: 1.5
+  price: 1.5
+  discount: 1.5
+  addonCost: 1.5
+  quantity: 1.5
+  deleted: false
+  order_id: 
+  user_id: 

@@ -2,13 +2,13 @@ require 'test_helper'
 
 class ProductItemsControllerTest < ActionController::TestCase
   setup do
-    @product_item = product_items(:one)
+    @item = product_items(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:product_items)
+    assert_not_nil assigns(:Items)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class ProductItemsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create product_item" do
-    assert_difference('ProductItem.count') do
-      post :create, product_item: { deleted: @product_item.deleted, enabled: @product_item.enabled, name: @product_item.name, user_id: @product_item.user_id }
+  test "should create item" do
+    assert_difference('Item.count') do
+      post :create, item: { deleted: @item.deleted, enabled: @item.enabled, name: @item.name, user_id: @item.user_id }
     end
 
-    assert_redirected_to product_item_path(assigns(:product_item))
+    assert_redirected_to product_item_path(assigns(:item))
   end
 
-  test "should show product_item" do
-    get :show, id: @product_item
+  test "should show item" do
+    get :show, id: @item
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @product_item
+    get :edit, id: @item
     assert_response :success
   end
 
-  test "should update product_item" do
-    patch :update, id: @product_item, product_item: { deleted: @product_item.deleted, enabled: @product_item.enabled, name: @product_item.name, user_id: @product_item.user_id }
-    assert_redirected_to product_item_path(assigns(:product_item))
+  test "should update item" do
+    patch :update, id: @item, item: { deleted: @item.deleted, enabled: @item.enabled, name: @item.name, user_id: @item.user_id }
+    assert_redirected_to product_item_path(assigns(:item))
   end
 
-  test "should destroy product_item" do
-    assert_difference('ProductItem.count', -1) do
-      delete :destroy, id: @product_item
+  test "should destroy item" do
+    assert_difference('Item.count', -1) do
+      delete :destroy, id: @item
     end
 
     assert_redirected_to product_items_path

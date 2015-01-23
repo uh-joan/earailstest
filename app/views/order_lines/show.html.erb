@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @order_line.text %>
+</p>
+
+<p>
+  <strong>Dealtext:</strong>
+  <%= @order_line.dealText %>
+</p>
+
+<p>
+  <strong>Customernote:</strong>
+  <%= @order_line.customerNote %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @order_line.total %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @order_line.price %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @order_line.discount %>
+</p>
+
+<p>
+  <strong>Addoncost:</strong>
+  <%= @order_line.addonCost %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @order_line.quantity %>
+</p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @order_line.deleted %>
+</p>
+
+<p>
+  <strong>Order:</strong>
+  <%= @order_line.order %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @order_line.user %>
+</p>
+
+<%= link_to 'Edit', edit_order_line_path(@order_line) %> |
+<%= link_to 'Back', order_lines_path %>

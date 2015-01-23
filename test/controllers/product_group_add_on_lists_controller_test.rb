@@ -2,13 +2,13 @@ require 'test_helper'
 
 class ProductGroupAddOnListsControllerTest < ActionController::TestCase
   setup do
-    @product_group_add_on_list = product_group_add_on_lists(:one)
+    @group_addon_list = product_group_add_on_lists(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:product_group_add_on_lists)
+    assert_not_nil assigns(:GroupAddonLists)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class ProductGroupAddOnListsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create product_group_add_on_list" do
-    assert_difference('ProductGroupAddOnList.count') do
-      post :create, product_group_add_on_list: { displayIndex: @product_group_add_on_list.displayIndex, logicIndex: @product_group_add_on_list.logicIndex, name: @product_group_add_on_list.name, product_group_id: @product_group_add_on_list.product_group_id, required: @product_group_add_on_list.required, user_id: @product_group_add_on_list.user_id }
+  test "should create group_addon_list" do
+    assert_difference('GroupAddonList.count') do
+      post :create, group_addon_list: { displayIndex: @group_addon_list.displayIndex, logicIndex: @group_addon_list.logicIndex, name: @group_addon_list.name, product_group_id: @group_addon_list.product_group_id, required: @group_addon_list.required, user_id: @group_addon_list.user_id }
     end
 
-    assert_redirected_to product_group_add_on_list_path(assigns(:product_group_add_on_list))
+    assert_redirected_to product_group_add_on_list_path(assigns(:group_addon_list))
   end
 
-  test "should show product_group_add_on_list" do
-    get :show, id: @product_group_add_on_list
+  test "should show group_addon_list" do
+    get :show, id: @group_addon_list
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @product_group_add_on_list
+    get :edit, id: @group_addon_list
     assert_response :success
   end
 
-  test "should update product_group_add_on_list" do
-    patch :update, id: @product_group_add_on_list, product_group_add_on_list: { displayIndex: @product_group_add_on_list.displayIndex, logicIndex: @product_group_add_on_list.logicIndex, name: @product_group_add_on_list.name, product_group_id: @product_group_add_on_list.product_group_id, required: @product_group_add_on_list.required, user_id: @product_group_add_on_list.user_id }
-    assert_redirected_to product_group_add_on_list_path(assigns(:product_group_add_on_list))
+  test "should update group_addon_list" do
+    patch :update, id: @group_addon_list, group_addon_list: { displayIndex: @group_addon_list.displayIndex, logicIndex: @group_addon_list.logicIndex, name: @group_addon_list.name, product_group_id: @group_addon_list.product_group_id, required: @group_addon_list.required, user_id: @group_addon_list.user_id }
+    assert_redirected_to product_group_add_on_list_path(assigns(:group_addon_list))
   end
 
-  test "should destroy product_group_add_on_list" do
-    assert_difference('ProductGroupAddOnList.count', -1) do
-      delete :destroy, id: @product_group_add_on_list
+  test "should destroy group_addon_list" do
+    assert_difference('GroupAddonList.count', -1) do
+      delete :destroy, id: @group_addon_list
     end
 
     assert_redirected_to product_group_add_on_lists_path

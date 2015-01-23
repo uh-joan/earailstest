@@ -22,6 +22,7 @@ gem 'active_model_serializers','~> 0.9.0'
 gem 'sdoc',                    '0.4.0', group: :doc
 
 group :development, :test do
+  gem 'rails-erd'
   gem 'sqlite3',     '1.3.9'
   gem 'byebug',      '3.4.0'
   gem 'web-console', '2.0.0.beta3'

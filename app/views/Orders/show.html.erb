@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @order.total %>
+</p>
+
+<p>
+  <strong>Subtotal:</strong>
+  <%= @order.subtotal %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @order.discount %>
+</p>
+
+<p>
+  <strong>Surcharge:</strong>
+  <%= @order.surcharge %>
+</p>
+
+<p>
+  <strong>Enabled:</strong>
+  <%= @order.enabled %>
+</p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @order.deleted %>
+</p>
+
+<p>
+  <strong>Sales order type:</strong>
+  <%= OrderType.find(@order.sales_order_type_id).name %>
+</p>
+
+<p>
+  <strong>Sales order status:</strong>
+  <%= OrderStatus.find(@order.sales_order_status_id).name %>
+</p>
+
+<p>
+  <strong>Sales order source:</strong>
+  <%= OrderSource.find(@order.sales_order_source_id).name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@order.user_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_sales_order_path(@order) %> |
+<%= link_to 'Back', sales_orders_path %>

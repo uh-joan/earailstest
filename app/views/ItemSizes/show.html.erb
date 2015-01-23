@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item_size.name %>
+</p>
+
+<p>
+  <strong>Product item:</strong>
+  <%= Item.find(@item_size.product_item_id).name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@item_size.user_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_product_item_size_path(@item_size) %> |
+<%= link_to 'Back', product_item_sizes_path %>

@@ -1,0 +1,49 @@
+<%= form_for(@addon) do |f| %>
+  <% if @addon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@addon.errors.count, "error") %> prohibited this product_add_on from being saved:</h2>
+
+      <ul>
+      <% @addon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :onlineViewLabel %><br>
+    <%= f.text_field :onlineViewLabel %>
+  </div>
+  <div class="field">
+    <%= f.label :printViewLabel %><br>
+    <%= f.text_field :printViewLabel %>
+  </div>
+  <div class="field">
+    <%= f.label :posViewLabel %><br>
+    <%= f.text_field :posViewLabel %>
+  </div>
+  <div class="field">
+    <%= f.label :displayIndex %><br>
+    <%= f.number_field :displayIndex %>
+  </div>
+  <div class="field">
+    <%= f.label :visibleOnline %><br>
+    <%= f.check_box :visibleOnline %>
+  </div>
+  <div class="field">
+    <%= f.label :visiblePos %><br>
+    <%= f.check_box :visiblePos %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -2,13 +2,13 @@ require 'test_helper'
 
 class ProductAddOnListsControllerTest < ActionController::TestCase
   setup do
-    @product_add_on_list = product_add_on_lists(:one)
+    @addon_list = product_add_on_lists(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:product_add_on_lists)
+    assert_not_nil assigns(:AddonLists)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class ProductAddOnListsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create product_add_on_list" do
-    assert_difference('ProductAddOnList.count') do
-      post :create, product_add_on_list: { enabled: @product_add_on_list.enabled, multipleSelection: @product_add_on_list.multipleSelection, name: @product_add_on_list.name, onlineViewLabel: @product_add_on_list.onlineViewLabel, posViewLabel: @product_add_on_list.posViewLabel, sortListByIndex: @product_add_on_list.sortListByIndex, sortListByName: @product_add_on_list.sortListByName, user_id: @product_add_on_list.user_id }
+  test "should create addon_list" do
+    assert_difference('AddonList.count') do
+      post :create, addon_list: { enabled: @addon_list.enabled, multipleSelection: @addon_list.multipleSelection, name: @addon_list.name, onlineViewLabel: @addon_list.onlineViewLabel, posViewLabel: @addon_list.posViewLabel, sortListByIndex: @addon_list.sortListByIndex, sortListByName: @addon_list.sortListByName, user_id: @addon_list.user_id }
     end
 
-    assert_redirected_to product_add_on_list_path(assigns(:product_add_on_list))
+    assert_redirected_to product_add_on_list_path(assigns(:addon_list))
   end
 
-  test "should show product_add_on_list" do
-    get :show, id: @product_add_on_list
+  test "should show addon_list" do
+    get :show, id: @addon_list
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @product_add_on_list
+    get :edit, id: @addon_list
     assert_response :success
   end
 
-  test "should update product_add_on_list" do
-    patch :update, id: @product_add_on_list, product_add_on_list: { enabled: @product_add_on_list.enabled, multipleSelection: @product_add_on_list.multipleSelection, name: @product_add_on_list.name, onlineViewLabel: @product_add_on_list.onlineViewLabel, posViewLabel: @product_add_on_list.posViewLabel, sortListByIndex: @product_add_on_list.sortListByIndex, sortListByName: @product_add_on_list.sortListByName, user_id: @product_add_on_list.user_id }
-    assert_redirected_to product_add_on_list_path(assigns(:product_add_on_list))
+  test "should update addon_list" do
+    patch :update, id: @addon_list, addon_list: { enabled: @addon_list.enabled, multipleSelection: @addon_list.multipleSelection, name: @addon_list.name, onlineViewLabel: @addon_list.onlineViewLabel, posViewLabel: @addon_list.posViewLabel, sortListByIndex: @addon_list.sortListByIndex, sortListByName: @addon_list.sortListByName, user_id: @addon_list.user_id }
+    assert_redirected_to product_add_on_list_path(assigns(:addon_list))
   end
 
-  test "should destroy product_add_on_list" do
-    assert_difference('ProductAddOnList.count', -1) do
-      delete :destroy, id: @product_add_on_list
+  test "should destroy addon_list" do
+    assert_difference('AddonList.count', -1) do
+      delete :destroy, id: @addon_list
     end
 
     assert_redirected_to product_add_on_lists_path

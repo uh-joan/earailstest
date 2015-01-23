@@ -2,13 +2,13 @@ require 'test_helper'
 
 class ProductGroupsControllerTest < ActionController::TestCase
   setup do
-    @product_group = product_groups(:one)
+    @group = product_groups(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:product_groups)
+    assert_not_nil assigns(:Groups)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class ProductGroupsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create product_group" do
-    assert_difference('ProductGroup.count') do
-      post :create, product_group: { deleted: @product_group.deleted, description: @product_group.description, displayIndex: @product_group.displayIndex, enabled: @product_group.enabled, headerImagePath: @product_group.headerImagePath, name: @product_group.name, onlineViewLabel: @product_group.onlineViewLabel, posViewLabel: @product_group.posViewLabel, posViewLabel: @product_group.posViewLabel, product_category_id: @product_group.product_category_id, user_id: @product_group.user_id, visibleOnPos: @product_group.visibleOnPos, visibleOnline: @product_group.visibleOnline }
+  test "should create group" do
+    assert_difference('Group.count') do
+      post :create, group: { deleted: @group.deleted, description: @group.description, displayIndex: @group.displayIndex, enabled: @group.enabled, headerImagePath: @group.headerImagePath, name: @group.name, onlineViewLabel: @group.onlineViewLabel, posViewLabel: @group.posViewLabel, posViewLabel: @group.posViewLabel, product_category_id: @group.product_category_id, user_id: @group.user_id, visibleOnPos: @group.visibleOnPos, visibleOnline: @group.visibleOnline }
     end
 
-    assert_redirected_to product_group_path(assigns(:product_group))
+    assert_redirected_to product_group_path(assigns(:group))
   end
 
-  test "should show product_group" do
-    get :show, id: @product_group
+  test "should show group" do
+    get :show, id: @group
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @product_group
+    get :edit, id: @group
     assert_response :success
   end
 
-  test "should update product_group" do
-    patch :update, id: @product_group, product_group: { deleted: @product_group.deleted, description: @product_group.description, displayIndex: @product_group.displayIndex, enabled: @product_group.enabled, headerImagePath: @product_group.headerImagePath, name: @product_group.name, onlineViewLabel: @product_group.onlineViewLabel, posViewLabel: @product_group.posViewLabel, posViewLabel: @product_group.posViewLabel, product_category_id: @product_group.product_category_id, user_id: @product_group.user_id, visibleOnPos: @product_group.visibleOnPos, visibleOnline: @product_group.visibleOnline }
-    assert_redirected_to product_group_path(assigns(:product_group))
+  test "should update group" do
+    patch :update, id: @group, group: { deleted: @group.deleted, description: @group.description, displayIndex: @group.displayIndex, enabled: @group.enabled, headerImagePath: @group.headerImagePath, name: @group.name, onlineViewLabel: @group.onlineViewLabel, posViewLabel: @group.posViewLabel, posViewLabel: @group.posViewLabel, product_category_id: @group.product_category_id, user_id: @group.user_id, visibleOnPos: @group.visibleOnPos, visibleOnline: @group.visibleOnline }
+    assert_redirected_to product_group_path(assigns(:group))
   end
 
-  test "should destroy product_group" do
-    assert_difference('ProductGroup.count', -1) do
-      delete :destroy, id: @product_group
+  test "should destroy group" do
+    assert_difference('Group.count', -1) do
+      delete :destroy, id: @group
     end
 
     assert_redirected_to product_groups_path

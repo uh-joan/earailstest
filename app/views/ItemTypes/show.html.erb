@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item_type.name %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@item_type.user_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_product_item_type_path(@item_type) %> |
+<%= link_to 'Back', product_item_types_path %>

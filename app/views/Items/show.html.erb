@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @item.name %>
+</p>
+
+<p>
+  <strong>Enabled:</strong>
+  <%= @item.enabled %>
+</p>
+
+<p>
+  <strong>Deleted:</strong>
+  <%= @item.deleted %>
+</p>
+
+<p>
+  <strong>Product group:</strong>
+  <%= Group.find(@item.product_group_id) %>
+</p>
+
+<p>
+  <strong>Product item type:</strong>
+  <%= ItemType.find(@item.product_item_type_id) %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= User.find(@item.user_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_product_item_path(@item) %> |
+<%= link_to 'Back', product_items_path %>

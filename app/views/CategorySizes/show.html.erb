@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Prefixlabelonline:</strong>
+  <%= @category_size.prefixLabelOnline %>
+</p>
+
+<p>
+  <strong>Prefixlabelprint:</strong>
+  <%= @category_size.prefixLabelPrint %>
+</p>
+
+<p>
+  <strong>Prefixlabelpos:</strong>
+  <%= @category_size.prefixLabelPos %>
+</p>
+
+<p>
+  <strong>Postfixlabelonline:</strong>
+  <%= @category_size.postfixLabelOnline %>
+</p>
+
+<p>
+  <strong>Postfixlabelprint:</strong>
+  <%= @category_size.postfixLabelPrint %>
+</p>
+
+<p>
+  <strong>Postfixlabelpos:</strong>
+  <%= @category_size.postfixLabelPos %>
+</p>
+
+<p>
+  <strong>Productcategory:</strong>
+  <%= TopCategory.find(@category_size.product_category_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_product_category_size_path(@category_size) %> |
+<%= link_to 'Back', product_category_sizes_path %>

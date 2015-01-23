@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @addon_list.name %>
+</p>
+
+<p>
+  <strong>Onlineviewlabel:</strong>
+  <%= @addon_list.onlineViewLabel %>
+</p>
+
+<p>
+  <strong>Posviewlabel:</strong>
+  <%= @addon_list.posViewLabel %>
+</p>
+
+<p>
+  <strong>Sortlistbyindex:</strong>
+  <%= @addon_list.sortListByIndex %>
+</p>
+
+<p>
+  <strong>Sortlistbyname:</strong>
+  <%= @addon_list.sortListByName %>
+</p>
+
+<p>
+  <strong>Multipleselection:</strong>
+  <%= @addon_list.multipleSelection %>
+</p>
+
+<p>
+  <strong>Enabled:</strong>
+  <%= @addon_list.enabled %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= User.find(@addon_list.user_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_product_add_on_list_path(@addon_list) %> |
+<%= link_to 'Back', product_add_on_lists_path %>

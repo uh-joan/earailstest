@@ -2,29 +2,29 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @category.name %>
+  <%= @top_category.name %>
 </p>
 
 <p>
   <strong>Shortdescription:</strong>
-  <%= @category.shortDescription %>
+  <%= @top_category.shortDescription %>
 </p>
 
 <p>
   <strong>Enabled:</strong>
-  <%= @category.enabled %>
+  <%= @top_category.enabled %>
 </p>
 
 <p>
   <strong>Deleted:</strong>
-  <%= @category.deleted %>
+  <%= @top_category.deleted %>
 </p>
 
 <p>
   <strong>User:</strong>
 
-  <%= User.find(@category.user_id).name %>
+  <%= User.find(@top_category.user_id).name %>
 </p>
 
-<%= link_to 'Edit', edit_product_category_path(@category) %> |
+<%= link_to 'Edit', edit_product_category_path(@top_category) %> |
 <%= link_to 'Back', product_categories_path %>

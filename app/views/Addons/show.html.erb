@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @addon.name %>
+</p>
+
+<p>
+  <strong>Onlineviewlabel:</strong>
+  <%= @addon.onlineViewLabel %>
+</p>
+
+<p>
+  <strong>Printviewlabel:</strong>
+  <%= @addon.printViewLabel %>
+</p>
+
+<p>
+  <strong>Posviewlabel:</strong>
+  <%= @addon.posViewLabel %>
+</p>
+
+<p>
+  <strong>Displayindex:</strong>
+  <%= @addon.displayIndex %>
+</p>
+
+<p>
+  <strong>Visibleonline:</strong>
+  <%= @addon.visibleOnline %>
+</p>
+
+<p>
+  <strong>Visiblepos:</strong>
+  <%= @addon.visiblePos %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%=  User.find(@addon.user_id).name  %>
+</p>
+
+<%= link_to 'Edit', edit_product_add_on_path(@addon) %> |
+<%= link_to 'Back', product_add_ons_path %>

@@ -5,18 +5,18 @@ module Api
 
       def index
         # railscasts.com/episodes/320-jbuilder?view=asciicast
-        # @pcs = ProductCategorySize.all
+        # @pcs = CategorySize.all
         # respond_to do |format|
         #   format.json {
         #     render json: @pcs.
         #   }
         # end
 
-        # @pcs = ProductCategorySize.all
-        respond_with ProductCategorySizeSerializer.new(ProductCategorySize.first).as_json
+        # @pcs = CategorySize.all
+        respond_with ProductCategorySizeSerializer.new(CategorySize.first).as_json
 
-        # ProductCategorySizeSerializer.new(ProductCategorySize.first).as_json
-        # render json: Category.all
+        # ProductCategorySizeSerializer.new(CategorySize.first).as_json
+        # render json: TopCategory.all
       end
 
     end

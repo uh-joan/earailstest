@@ -2,13 +2,13 @@ require 'test_helper'
 
 class SalesOrdersControllerTest < ActionController::TestCase
   setup do
-    @sales_order = sales_orders(:one)
+    @order = sales_orders(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:sales_orders)
+    assert_not_nil assigns(:Orders)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class SalesOrdersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create sales_order" do
-    assert_difference('SalesOrder.count') do
-      post :create, sales_order: { deleted: @sales_order.deleted, discount: @sales_order.discount, enabled: @sales_order.enabled, name: @sales_order.name, sales_order_source_id: @sales_order.sales_order_source_id, sales_order_status_id: @sales_order.sales_order_status_id, sales_order_type_id: @sales_order.sales_order_type_id, subtotal: @sales_order.subtotal, surcharge: @sales_order.surcharge, total: @sales_order.total, user_id: @sales_order.user_id }
+  test "should create order" do
+    assert_difference('Order.count') do
+      post :create, order: { deleted: @order.deleted, discount: @order.discount, enabled: @order.enabled, name: @order.name, sales_order_source_id: @order.sales_order_source_id, sales_order_status_id: @order.sales_order_status_id, sales_order_type_id: @order.sales_order_type_id, subtotal: @order.subtotal, surcharge: @order.surcharge, total: @order.total, user_id: @order.user_id }
     end
 
-    assert_redirected_to sales_order_path(assigns(:sales_order))
+    assert_redirected_to sales_order_path(assigns(:order))
   end
 
-  test "should show sales_order" do
-    get :show, id: @sales_order
+  test "should show order" do
+    get :show, id: @order
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @sales_order
+    get :edit, id: @order
     assert_response :success
   end
 
-  test "should update sales_order" do
-    patch :update, id: @sales_order, sales_order: { deleted: @sales_order.deleted, discount: @sales_order.discount, enabled: @sales_order.enabled, name: @sales_order.name, sales_order_source_id: @sales_order.sales_order_source_id, sales_order_status_id: @sales_order.sales_order_status_id, sales_order_type_id: @sales_order.sales_order_type_id, subtotal: @sales_order.subtotal, surcharge: @sales_order.surcharge, total: @sales_order.total, user_id: @sales_order.user_id }
-    assert_redirected_to sales_order_path(assigns(:sales_order))
+  test "should update order" do
+    patch :update, id: @order, order: { deleted: @order.deleted, discount: @order.discount, enabled: @order.enabled, name: @order.name, sales_order_source_id: @order.sales_order_source_id, sales_order_status_id: @order.sales_order_status_id, sales_order_type_id: @order.sales_order_type_id, subtotal: @order.subtotal, surcharge: @order.surcharge, total: @order.total, user_id: @order.user_id }
+    assert_redirected_to sales_order_path(assigns(:order))
   end
 
-  test "should destroy sales_order" do
-    assert_difference('SalesOrder.count', -1) do
-      delete :destroy, id: @sales_order
+  test "should destroy order" do
+    assert_difference('Order.count', -1) do
+      delete :destroy, id: @order
     end
 
     assert_redirected_to sales_orders_path

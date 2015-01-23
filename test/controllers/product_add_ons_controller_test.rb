@@ -2,13 +2,13 @@ require 'test_helper'
 
 class ProductAddOnsControllerTest < ActionController::TestCase
   setup do
-    @product_add_on = product_add_ons(:one)
+    @addon = product_add_ons(:one)
   end
 
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:product_add_ons)
+    assert_not_nil assigns(:Addons)
   end
 
   test "should get new" do
@@ -16,32 +16,32 @@ class ProductAddOnsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create product_add_on" do
-    assert_difference('ProductAddOn.count') do
-      post :create, product_add_on: { displayIndex: @product_add_on.displayIndex, name: @product_add_on.name, onlineViewLabel: @product_add_on.onlineViewLabel, posViewLabel: @product_add_on.posViewLabel, printViewLabel: @product_add_on.printViewLabel, user_id: @product_add_on.user_id, visibleOnline: @product_add_on.visibleOnline, visiblePos: @product_add_on.visiblePos }
+  test "should create addon" do
+    assert_difference('Addon.count') do
+      post :create, addon: { displayIndex: @addon.displayIndex, name: @addon.name, onlineViewLabel: @addon.onlineViewLabel, posViewLabel: @addon.posViewLabel, printViewLabel: @addon.printViewLabel, user_id: @addon.user_id, visibleOnline: @addon.visibleOnline, visiblePos: @addon.visiblePos }
     end
 
-    assert_redirected_to product_add_on_path(assigns(:product_add_on))
+    assert_redirected_to product_add_on_path(assigns(:addon))
   end
 
-  test "should show product_add_on" do
-    get :show, id: @product_add_on
+  test "should show addon" do
+    get :show, id: @addon
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @product_add_on
+    get :edit, id: @addon
     assert_response :success
   end
 
-  test "should update product_add_on" do
-    patch :update, id: @product_add_on, product_add_on: { displayIndex: @product_add_on.displayIndex, name: @product_add_on.name, onlineViewLabel: @product_add_on.onlineViewLabel, posViewLabel: @product_add_on.posViewLabel, printViewLabel: @product_add_on.printViewLabel, user_id: @product_add_on.user_id, visibleOnline: @product_add_on.visibleOnline, visiblePos: @product_add_on.visiblePos }
-    assert_redirected_to product_add_on_path(assigns(:product_add_on))
+  test "should update addon" do
+    patch :update, id: @addon, addon: { displayIndex: @addon.displayIndex, name: @addon.name, onlineViewLabel: @addon.onlineViewLabel, posViewLabel: @addon.posViewLabel, printViewLabel: @addon.printViewLabel, user_id: @addon.user_id, visibleOnline: @addon.visibleOnline, visiblePos: @addon.visiblePos }
+    assert_redirected_to product_add_on_path(assigns(:addon))
   end
 
-  test "should destroy product_add_on" do
-    assert_difference('ProductAddOn.count', -1) do
-      delete :destroy, id: @product_add_on
+  test "should destroy addon" do
+    assert_difference('Addon.count', -1) do
+      delete :destroy, id: @addon
     end
 
     assert_redirected_to product_add_ons_path

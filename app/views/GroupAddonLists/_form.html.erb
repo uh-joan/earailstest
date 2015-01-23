@@ -1,0 +1,41 @@
+<%= form_for(@group_addon_list) do |f| %>
+  <% if @group_addon_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group_addon_list.errors.count, "error") %> prohibited this product_group_add_on_list from being saved:</h2>
+
+      <ul>
+      <% @group_addon_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :displayIndex %><br>
+    <%= f.number_field :displayIndex %>
+  </div>
+  <div class="field">
+    <%= f.label :logicIndex %><br>
+    <%= f.number_field :logicIndex %>
+  </div>
+  <div class="field">
+    <%= f.label :required %><br>
+    <%= f.check_box :required %>
+  </div>
+  <div class="field">
+    <%= f.label :product_group_id %><br>
+    <%= f.text_field :product_group_id %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
