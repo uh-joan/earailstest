@@ -11,9 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150123171856) do
+ActiveRecord::Schema.define(version: 20150124233946) do
 
   create_table "addon_list_items", force: true do |t|
+    t.string   "name"
     t.integer  "user_id"
     t.integer  "addon_list_id"
     t.integer  "addon_id"

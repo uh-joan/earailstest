@@ -1,32 +1,32 @@
 class CategorySizesController < ApplicationController
   before_action :set_product_category_size, only: [:show, :edit, :update, :destroy]
 
-  # GET /CategorySizes
-  # GET /CategorySizes.json
+  # GET /category_sizes
+  # GET /category_sizes.json
   def index
     @category_sizes = CategorySize.all
   end
 
-  # GET /CategorySizes/1
-  # GET /CategorySizes/1.json
+  # GET /category_sizes/1
+  # GET /category_sizes/1.json
   def show
   end
 
-  # GET /CategorySizes/new
+  # GET /category_sizes/new
   def new
     @category_size = CategorySize.new
   end
 
-  # GET /CategorySizes/1/edit
+  # GET /category_sizes/1/edit
   def edit
   end
 
-  # POST /CategorySizes
-  # POST /CategorySizes.json
+  # POST /category_sizes
+  # POST /category_sizes.json
   def create
-    # @top_category = current_user.Categories.build(product_category_params)
+    # @top_category = current_user.top_categories.build(product_category_params)
     #
-    # how to find the current product catgory??
+    # how to find the current product category??
     #
     # @category_size = @current_product_category.product_categories_sizes(product_category_size_params)
     @category_size = CategorySize.new(product_category_size_params)
@@ -42,8 +42,8 @@ class CategorySizesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /CategorySizes/1
-  # PATCH/PUT /CategorySizes/1.json
+  # PATCH/PUT /category_sizes/1
+  # PATCH/PUT /category_sizes/1.json
   def update
     respond_to do |format|
       if @category_size.update(product_category_size_params)
@@ -56,12 +56,12 @@ class CategorySizesController < ApplicationController
     end
   end
 
-  # DELETE /CategorySizes/1
-  # DELETE /CategorySizes/1.json
+  # DELETE /category_sizes/1
+  # DELETE /category_sizes/1.json
   def destroy
     @category_size.destroy
     respond_to do |format|
-      format.html { redirect_to product_category_sizes_url, notice: 'Product top_category size was successfully destroyed.' }
+      format.html { redirect_to category_sizes_url, notice: 'Product top_category size was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -74,6 +74,6 @@ class CategorySizesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_category_size_params
-      params.require(:category_size).permit(:prefixLabelOnline, :prefixLabelPrint, :prefixLabelPos, :postfixLabelOnline, :postfixLabelPrint, :postfixLabelPos, :product_category_id)
+      params.require(:category_size).permit(:prefixLabelOnline, :prefixLabelPrint, :prefixLabelPos, :postfixLabelOnline, :postfixLabelPrint, :postfixLabelPos, :top_category_id, :user_id)
     end
 end

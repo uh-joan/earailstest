@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Product Categories</h1>
+<h1>Listing Categories</h1>
 
 <table>
   <thead>
@@ -23,7 +23,7 @@
         <td><%= product_category.deleted %></td>
         <td><%= User.find(product_category.user_id).name %></td>
         <td><%= link_to 'Show', product_category %></td>
-        <td><%= link_to 'Edit', edit_product_category_path(product_category) %></td>
+        <td><%= link_to 'Edit', edit_top_category_path(product_category) %></td>
         <td><%= link_to 'Destroy', product_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Product top_category', new_product_category_path %>
+<%= link_to 'New Category', new_top_category_path %>

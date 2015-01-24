@@ -1,7 +1,7 @@
 <%= form_for(@addon_list_item) do |f| %>
   <% if @addon_list_item.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@addon_list_item.errors.count, "error") %> prohibited this product_add_on_list_item from being saved:</h2>
+      <h2><%= pluralize(@addon_list_item.errors.count, "error") %> prohibited this addon_list_item from being saved:</h2>
 
       <ul>
       <% @addon_list_item.errors.full_messages.each do |message| %>
@@ -10,20 +10,23 @@
       </ul>
     </div>
   <% end %>
-
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
   <div class="field">
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
   </div>
 
   <div class="field">
-    <%= f.label :product_add_on_list_id %><br>
-    <%= f.text_field :product_add_on_list_id %>
+    <%= f.label :addon_list_id %><br>
+    <%= f.text_field :addon_list_id %>
   </div>
 
   <div class="field">
-    <%= f.label :product_add_on_id %><br>
-    <%= f.text_field :product_add_on_id %>
+    <%= f.label :addon_id %><br>
+    <%= f.text_field :addon_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

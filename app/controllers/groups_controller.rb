@@ -1,28 +1,28 @@
 class GroupsController < ApplicationController
   before_action :set_product_group, only: [:show, :edit, :update, :destroy]
 
-  # GET /Groups
-  # GET /Groups.json
+  # GET /groups
+  # GET /groups.json
   def index
     @groups = Group.all
   end
 
-  # GET /Groups/1
-  # GET /Groups/1.json
+  # GET /groups/1
+  # GET /groups/1.json
   def show
   end
 
-  # GET /Groups/new
+  # GET /groups/new
   def new
     @group = Group.new
   end
 
-  # GET /Groups/1/edit
+  # GET /groups/1/edit
   def edit
   end
 
-  # POST /Groups
-  # POST /Groups.json
+  # POST /groups
+  # POST /groups.json
   def create
     @group = Group.new(product_group_params)
 
@@ -37,8 +37,8 @@ class GroupsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /Groups/1
-  # PATCH/PUT /Groups/1.json
+  # PATCH/PUT /groups/1
+  # PATCH/PUT /groups/1.json
   def update
     respond_to do |format|
       if @group.update(product_group_params)
@@ -51,12 +51,12 @@ class GroupsController < ApplicationController
     end
   end
 
-  # DELETE /Groups/1
-  # DELETE /Groups/1.json
+  # DELETE /groups/1
+  # DELETE /groups/1.json
   def destroy
     @group.destroy
     respond_to do |format|
-      format.html { redirect_to product_groups_url, notice: 'Product group was successfully destroyed.' }
+      format.html { redirect_to groups_url, notice: 'Product group was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class GroupsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_group_params
-      params.require(:group).permit(:name, :description, :onlineViewLabel, :posViewLabel, :posViewLabel, :headerImagePath, :displayIndex, :visibleOnline, :visibleOnPos, :enabled, :deleted, :user_id, :product_category_id)
+      params.require(:group).permit(:name, :description, :onlineViewLabel, :posViewLabel, :posViewLabel, :headerImagePath, :displayIndex, :visibleOnline, :visibleOnPos, :enabled, :deleted, :user_id, :top_category_id)
     end
 end

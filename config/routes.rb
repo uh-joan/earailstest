@@ -27,9 +27,9 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :top_categories
-  get '/top_categories', to: 'top_categories#index', as: 'product_categories_path'
+  get '/top_categories', to: 'top_categories#index', as: 'top_categories_path'
   resources :category_sizes
-  get '/category_sizes', to: 'category_sizes#index', as: 'product_category_sizes_path'
+  get '/category_sizes', to: 'category_sizes#index', as: 'category_sizes_path'
   resources :group_addon_lists
   get '/group_addon_lists', to: 'group_addon_lists#index', as: 'product_group_add_on_lists_path'
   resources :groups
@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   resources :addon_list_items
   get '/addon_list_items', to: 'addon_list_items#index', as: 'product_add_on_list_items_path'
   resources :addons
-  get '/addons', to: 'addons#index', as: 'product_add_ons_path'
+  get '/addons', to: 'addons#index', as: 'add_ons_path'
   resources :items
   get '/items', to: 'items#index', as: 'product_items_path'
   resources :item_types

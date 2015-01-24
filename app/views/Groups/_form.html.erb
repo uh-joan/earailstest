@@ -1,7 +1,7 @@
 <%= form_for(@group) do |f| %>
   <% if @group.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this product_group from being saved:</h2>
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
       <ul>
       <% @group.errors.full_messages.each do |message| %>
@@ -60,8 +60,8 @@
     <%= f.text_field :user_id %>
   </div>
   <div class="field">
-    <%= f.label :product_category_id %><br>
-    <%= f.text_field :product_category_id %>
+    <%= f.label :top_category_id %><br>
+    <%= f.text_field :top_category_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

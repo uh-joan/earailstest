@@ -8,7 +8,7 @@ class ProductGroupsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:Groups)
+    assert_not_nil assigns(:groups)
   end
 
   test "should get new" do

@@ -1,28 +1,28 @@
 class AddonsController < ApplicationController
   before_action :set_product_add_on, only: [:show, :edit, :update, :destroy]
 
-  # GET /Addons
-  # GET /Addons.json
+  # GET /addons
+  # GET /addons.json
   def index
     @addons = Addon.all
   end
 
-  # GET /Addons/1
-  # GET /Addons/1.json
+  # GET /addons/1
+  # GET /addons/1.json
   def show
   end
 
-  # GET /Addons/new
+  # GET /addons/new
   def new
     @addon = Addon.new
   end
 
-  # GET /Addons/1/edit
+  # GET /addons/1/edit
   def edit
   end
 
-  # POST /Addons
-  # POST /Addons.json
+  # POST /addons
+  # POST /addons.json
   def create
     @addon = Addon.new(product_add_on_params)
 
@@ -37,8 +37,8 @@ class AddonsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /Addons/1
-  # PATCH/PUT /Addons/1.json
+  # PATCH/PUT /addons/1
+  # PATCH/PUT /addons/1.json
   def update
     respond_to do |format|
       if @addon.update(product_add_on_params)
@@ -51,12 +51,12 @@ class AddonsController < ApplicationController
     end
   end
 
-  # DELETE /Addons/1
-  # DELETE /Addons/1.json
+  # DELETE /addons/1
+  # DELETE /addons/1.json
   def destroy
     @addon.destroy
     respond_to do |format|
-      format.html { redirect_to product_add_ons_url, notice: 'Product add on was successfully destroyed.' }
+      format.html { redirect_to addons_url, notice: 'Product add on was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

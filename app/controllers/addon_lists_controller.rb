@@ -1,28 +1,28 @@
 class AddonListsController < ApplicationController
   before_action :set_product_add_on_list, only: [:show, :edit, :update, :destroy]
 
-  # GET /AddonLists
-  # GET /AddonLists.json
+  # GET /addon_lists
+  # GET /addon_lists.json
   def index
     @addon_lists = AddonList.all
   end
 
-  # GET /AddonLists/1
-  # GET /AddonLists/1.json
+  # GET /addon_lists/1
+  # GET /addon_lists/1.json
   def show
   end
 
-  # GET /AddonLists/new
+  # GET /addon_lists/new
   def new
     @addon_list = AddonList.new
   end
 
-  # GET /AddonLists/1/edit
+  # GET /addon_lists/1/edit
   def edit
   end
 
-  # POST /AddonLists
-  # POST /AddonLists.json
+  # POST /addon_lists
+  # POST /addon_lists.json
   def create
     @addon_list = AddonList.new(product_add_on_list_params)
 
@@ -37,8 +37,8 @@ class AddonListsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /AddonLists/1
-  # PATCH/PUT /AddonLists/1.json
+  # PATCH/PUT /addon_lists/1
+  # PATCH/PUT /addon_lists/1.json
   def update
     respond_to do |format|
       if @addon_list.update(product_add_on_list_params)
@@ -51,12 +51,12 @@ class AddonListsController < ApplicationController
     end
   end
 
-  # DELETE /AddonLists/1
-  # DELETE /AddonLists/1.json
+  # DELETE /addon_lists/1
+  # DELETE /addon_lists/1.json
   def destroy
     @addon_list.destroy
     respond_to do |format|
-      format.html { redirect_to product_add_on_lists_url, notice: 'Product add on list was successfully destroyed.' }
+      format.html { redirect_to addon_lists_url, notice: 'Product add on list was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

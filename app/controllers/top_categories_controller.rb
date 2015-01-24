@@ -3,31 +3,31 @@ class TopCategoriesController < ApplicationController
   # before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   # before_action :correct_user,   only: [:edit, :update]
 
-  # GET /Categories
-  # GET /Categories.json
+  # GET /top_categories
+  # GET /top_categories.json
   def index
     @top_categories = TopCategory.all
   end
 
-  # GET /Categories/1
-  # GET /Categories/1.json
+  # GET /top_categories/1
+  # GET /top_categories/1.json
   def show
   end
 
-  # GET /Categories/new
+  # GET /top_categories/new
   def new
     @top_category = TopCategory.new
   end
 
-  # GET /Categories/1/edit
+  # GET /top_categories/1/edit
   def edit
   end
 
-  # POST /Categories
-  # POST /Categories.json
+  # POST /top_categories
+  # POST /top_categories.json
   def create
     @top_category = TopCategory.new(product_category_params)
-    # @top_category = current_user.Categories.build(product_category_params)
+    # @top_category = current_user.top_categories.build(product_category_params)
 
     respond_to do |format|
       if @top_category.save
@@ -41,8 +41,8 @@ class TopCategoriesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /Categories/1
-  # PATCH/PUT /Categories/1.json
+  # PATCH/PUT /top_categories/1
+  # PATCH/PUT /top_categories/1.json
   def update
     respond_to do |format|
       if @top_category.update(product_category_params)
@@ -55,12 +55,12 @@ class TopCategoriesController < ApplicationController
     end
   end
 
-  # DELETE /Categories/1
-  # DELETE /Categories/1.json
+  # DELETE /top_categories/1
+  # DELETE /top_categories/1.json
   def destroy
     @top_category.destroy
     respond_to do |format|
-      format.html { redirect_to product_categories_url, notice: 'Product top_category was successfully destroyed.' }
+      format.html { redirect_to top_categories_url, notice: 'Product top_category was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

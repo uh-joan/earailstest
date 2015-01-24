@@ -31,9 +31,14 @@
 </p>
 
 <p>
-  <strong>Productcategory:</strong>
-  <%= TopCategory.find(@category_size.product_category_id).name %>
+  <strong>Category:</strong>
+  <%= TopCategory.find(@category_size.top_category_id).name %>
 </p>
 
-<%= link_to 'Edit', edit_product_category_size_path(@category_size) %> |
-<%= link_to 'Back', product_category_sizes_path %>
+<p>
+  <strong>User:</strong>
+  <%= User.find(@category_size.user_id).name %>
+</p>
+
+<%= link_to 'Edit', edit_category_size_path(@category_size) %> |
+<%= link_to 'Back', category_sizes_path %>

@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Product Add On List Items</h1>
+<h1>Listing Addon List Items</h1>
 
 <table>
   <thead>
     <tr>
-      <th>User</th>
-      <th>**Product add on list</th>
-      <th>**Product add on</th>
+      <th>Name</th>
+      <th>**User</th>
+      <th>**Addon list</th>
+      <th>**Addon</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,11 +16,12 @@
   <tbody>
     <% @addon_list_items.each do |product_add_on_list_item| %>
       <tr>
+        <td><%= product_add_on_list_item.name %></td>
         <td><%= User.find(product_add_on_list_item.user_id).name %></td>
-        <td><%= AddonList.find(product_add_on_list_item.product_add_on_list_id).name %></td>
-        <td><%= Addon.find(product_add_on_list_item.product_add_on_id).name %></td>
+        <td><%= AddonList.find(product_add_on_list_item.addon_list_id).name %></td>
+        <td><%= Addon.find(product_add_on_list_item.addon_id).name %></td>
         <td><%= link_to 'Show', product_add_on_list_item %></td>
-        <td><%= link_to 'Edit', edit_product_add_on_list_item_path(product_add_on_list_item) %></td>
+        <td><%= link_to 'Edit', edit_addon_list_item_path(product_add_on_list_item) %></td>
         <td><%= link_to 'Destroy', product_add_on_list_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -28,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Product add on list item', new_product_add_on_list_item_path %>
+<%= link_to 'New add on list item', new_addon_list_item_path %>

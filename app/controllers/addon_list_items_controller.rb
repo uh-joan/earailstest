@@ -1,28 +1,28 @@
 class AddonListItemsController < ApplicationController
   before_action :set_product_add_on_list_item, only: [:show, :edit, :update, :destroy]
 
-  # GET /AddonListItems
-  # GET /AddonListItems.json
+  # GET /addon_list_items
+  # GET /addon_list_items.json
   def index
     @addon_list_items = AddonListItem.all
   end
 
-  # GET /AddonListItems/1
-  # GET /AddonListItems/1.json
+  # GET /addon_list_items/1
+  # GET /addon_list_items/1.json
   def show
   end
 
-  # GET /AddonListItems/new
+  # GET /addon_list_items/new
   def new
     @addon_list_item = AddonListItem.new
   end
 
-  # GET /AddonListItems/1/edit
+  # GET /addon_list_items/1/edit
   def edit
   end
 
-  # POST /AddonListItems
-  # POST /AddonListItems.json
+  # POST /addon_list_items
+  # POST /addon_list_items.json
   def create
     @addon_list_item = AddonListItem.new(product_add_on_list_item_params)
 
@@ -37,8 +37,8 @@ class AddonListItemsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /AddonListItems/1
-  # PATCH/PUT /AddonListItems/1.json
+  # PATCH/PUT /addon_list_items/1
+  # PATCH/PUT /addon_list_items/1.json
   def update
     respond_to do |format|
       if @addon_list_item.update(product_add_on_list_item_params)
@@ -51,12 +51,12 @@ class AddonListItemsController < ApplicationController
     end
   end
 
-  # DELETE /AddonListItems/1
-  # DELETE /AddonListItems/1.json
+  # DELETE /addon_list_items/1
+  # DELETE /addon_list_items/1.json
   def destroy
     @addon_list_item.destroy
     respond_to do |format|
-      format.html { redirect_to product_add_on_list_items_url, notice: 'Product add on list item was successfully destroyed.' }
+      format.html { redirect_to addon_list_items_url, notice: 'Product add on list item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class AddonListItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_add_on_list_item_params
-      params.require(:addon_list_item).permit(:user_id, :product_add_on_list_id, :product_add_on_id)
+      params.require(:addon_list_item).permit(:name, :user_id, :addon_list_id, :addon_id)
     end
 end

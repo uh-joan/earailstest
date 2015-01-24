@@ -57,13 +57,13 @@
 
 <p>
   <strong>User:</strong>
-  <%= User.find(@group.user_id) %>
+  <%= User.find(@group.user_id).name %>
 </p>
 
 <p>
   <strong>Product category:</strong>
-  <%= TopCategory.find(@group.product_category_id) %>
+  <%= TopCategory.find(@group.top_category_id).name %>
 </p>
 
-<%= link_to 'Edit', edit_product_group_path(@group) %> |
-<%= link_to 'Back', product_groups_path %>
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>
