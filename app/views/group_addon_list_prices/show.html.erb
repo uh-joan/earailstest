@@ -22,22 +22,22 @@
 
 <p>
   <strong>Product group:</strong>
-  <%= Group.find(@group_addon_list_price.product_group_id).name %>
+  <%= Group.find(@group_addon_list_price.group_id).name %>
 </p>
 
 <p>
   <strong>Product group add on list:</strong>
-  <%= GroupAddonList.find(@group_addon_list_price.pr_gr_adon_li_id).name %>
+  <%= GroupAddonList.find(@group_addon_list_price.group_addon_list_id).name %>
 </p>
 
 <p>
   <strong>Product add on:</strong>
-  <%= Addon.find(@group_addon_list_price.product_add_on_id).name %>
+  <%= Addon.find(@group_addon_list_price.addon_id).name %>
 </p>
 
 <p>
   <strong>Product category size:</strong>
-  <%= CategorySize.find(@group_addon_list_price.pr_cat_size_id).name %>
+  <%= CategorySize.find(@group_addon_list_price.category_size_id).prefixLabelOnline %>
 </p>
 
 <p>
@@ -45,5 +45,5 @@
   <%= User.find(@group_addon_list_price.user_id).name %>
 </p>
 
-<%= link_to 'Edit', edit_product_group_add_on_list_price_path(@group_addon_list_price) %> |
-<%= link_to 'Back', product_group_add_on_list_prices_path %>
+<%= link_to 'Edit', edit_group_addon_list_price_path(@group_addon_list_price) %> |
+<%= link_to 'Back', group_addon_list_prices_path %>

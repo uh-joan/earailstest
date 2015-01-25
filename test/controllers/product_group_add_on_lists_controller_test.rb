@@ -8,7 +8,7 @@ class ProductGroupAddOnListsControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:GroupAddonLists)
+    assert_not_nil assigns(:group_addon_lists)
   end
 
   test "should get new" do

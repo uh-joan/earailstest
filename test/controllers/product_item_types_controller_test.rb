@@ -8,7 +8,7 @@ class ProductItemTypesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil assigns(:ItemTypes)
+    assert_not_nil assigns(:item_types)
   end
 
   test "should get new" do

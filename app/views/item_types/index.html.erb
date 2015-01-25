@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Product Item Types</h1>
+<h1>Listing Item Types</h1>
 
 <table>
   <thead>
@@ -17,7 +17,7 @@
         <td><%= product_item_type.name %></td>
         <td><%= User.find(product_item_type.user_id).name %></td>
         <td><%= link_to 'Show', product_item_type %></td>
-        <td><%= link_to 'Edit', edit_product_item_type_path(product_item_type) %></td>
+        <td><%= link_to 'Edit', edit_item_type_path(product_item_type) %></td>
         <td><%= link_to 'Destroy', product_item_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Product item type', new_product_item_type_path %>
+<%= link_to 'New Item type', new_item_type_path %>

@@ -1,28 +1,28 @@
 class GroupAddonListsController < ApplicationController
   before_action :set_product_group_add_on_list, only: [:show, :edit, :update, :destroy]
 
-  # GET /GroupAddonLists
-  # GET /GroupAddonLists.json
+  # GET /group_addon_lists
+  # GET /group_addon_lists.json
   def index
     @group_addon_lists = GroupAddonList.all
   end
 
-  # GET /GroupAddonLists/1
-  # GET /GroupAddonLists/1.json
+  # GET /group_addon_lists/1
+  # GET /group_addon_lists/1.json
   def show
   end
 
-  # GET /GroupAddonLists/new
+  # GET /group_addon_lists/new
   def new
     @group_addon_list = GroupAddonList.new
   end
 
-  # GET /GroupAddonLists/1/edit
+  # GET /group_addon_lists/1/edit
   def edit
   end
 
-  # POST /GroupAddonLists
-  # POST /GroupAddonLists.json
+  # POST /group_addon_lists
+  # POST /group_addon_lists.json
   def create
     @group_addon_list = GroupAddonList.new(product_group_add_on_list_params)
 
@@ -37,8 +37,8 @@ class GroupAddonListsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /GroupAddonLists/1
-  # PATCH/PUT /GroupAddonLists/1.json
+  # PATCH/PUT /group_addon_lists/1
+  # PATCH/PUT /group_addon_lists/1.json
   def update
     respond_to do |format|
       if @group_addon_list.update(product_group_add_on_list_params)
@@ -51,12 +51,12 @@ class GroupAddonListsController < ApplicationController
     end
   end
 
-  # DELETE /GroupAddonLists/1
-  # DELETE /GroupAddonLists/1.json
+  # DELETE /group_addon_lists/1
+  # DELETE /group_addon_lists/1.json
   def destroy
     @group_addon_list.destroy
     respond_to do |format|
-      format.html { redirect_to product_group_add_on_lists_url, notice: 'Product group add on list was successfully destroyed.' }
+      format.html { redirect_to group_addon_lists_url, notice: 'Product group add on list was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class GroupAddonListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_group_add_on_list_params
-      params.require(:group_addon_list).permit(:name, :displayIndex, :logicIndex, :required, :product_group_id, :user_id)
+      params.require(:group_addon_list).permit(:name, :displayIndex, :logicIndex, :required, :group_id, :user_id)
     end
 end

@@ -17,17 +17,17 @@
 
 <p>
   <strong>Product group:</strong>
-  <%= Group.find(@item.product_group_id) %>
+  <%= Group.find(@item.group_id).name %>
 </p>
 
 <p>
   <strong>Product item type:</strong>
-  <%= ItemType.find(@item.product_item_type_id) %>
+  <%= ItemType.find(@item.item_type_id).name %>
 </p>
 <p>
   <strong>User:</strong>
   <%= User.find(@item.user_id).name %>
 </p>
 
-<%= link_to 'Edit', edit_product_item_path(@item) %> |
-<%= link_to 'Back', product_items_path %>
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

@@ -1,7 +1,7 @@
 <%= form_for(@group_addon_list) do |f| %>
   <% if @group_addon_list.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@group_addon_list.errors.count, "error") %> prohibited this product_group_add_on_list from being saved:</h2>
+      <h2><%= pluralize(@group_addon_list.errors.count, "error") %> prohibited this group_addon_list from being saved:</h2>
 
       <ul>
       <% @group_addon_list.errors.full_messages.each do |message| %>
@@ -28,8 +28,8 @@
     <%= f.check_box :required %>
   </div>
   <div class="field">
-    <%= f.label :product_group_id %><br>
-    <%= f.text_field :product_group_id %>
+    <%= f.label :group_id %><br>
+    <%= f.text_field :group_id %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>

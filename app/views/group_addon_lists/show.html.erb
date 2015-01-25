@@ -21,14 +21,14 @@
 </p>
 
 <p>
-  <strong>Product group:</strong>
-  <%= Group.find(@group_addon_list.product_group_id) %>
+  <strong>Group:</strong>
+  <%= Group.find(@group_addon_list.group_id).name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= User.find(@group_addon_list.user_id) %>
+  <%= User.find(@group_addon_list.user_id).name %>
 </p>
 
-<%= link_to 'Edit', edit_product_group_add_on_list_path(@group_addon_list) %> |
-<%= link_to 'Back', product_group_add_on_lists_path %>
+<%= link_to 'Edit', edit_group_addon_list_path(@group_addon_list) %> |
+<%= link_to 'Back', group_addon_lists_path %>
