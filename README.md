@@ -2,8 +2,8 @@
 
 Check out:
 
-* [ea wiki page!](../earailstemp/wiki/Home)
-* [git cheats](../earailstemp/wiki/gitcheats)
+* [ea wiki page!](../easyaccess/earailstemp/wiki/Home)
+* [git cheats](../easyaccess/earailstemp/wiki/gitcheats)
 
 ### How do I get set up? ###
 
