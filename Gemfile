@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails',                   '4.2.0.beta4'
+gem 'bower-rails',             '~> 0.9.1'
+gem 'angular-rails-templates'
 gem 'bcrypt',                  '3.1.7'
 gem 'faker',                   '1.4.2'
 gem 'carrierwave',             '0.10.0'

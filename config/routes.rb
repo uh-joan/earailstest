@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'account_activations/edit'
   get 'sessions/new'
 
-  root                'static_pages#home'
+  root 'application#index'
+  # root                'static_pages#home'
   # get    'help'    => 'static_pages#help'
   # get    'about'   => 'static_pages#about'
   # get    'contact' => 'static_pages#contact'
@@ -62,11 +63,8 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      # get 'products#index'
       resources :top_categories
-      resources :users
       resources :category_sizes
-      resources :products
     end
   end
 end
