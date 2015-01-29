@@ -2,15 +2,15 @@ angular
     .module('EA', ['ngRoute', 'ngResource', 'templates'])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.
-            when('/atop_categories', {
-                templateUrl : 'top_categories_list.html',
-                controller: 'TopCategoriesCtrl'
+            when('/acategory_sizes', {
+                templateUrl : 'category_sizes_list.html',
+                controller: 'CategorySizesCtrl'
             }).
-            when('/atop_categories/:topCategoryId', {
-                templateUrl : 'top_category_detail.html',
-                controller: 'TopCategoryDetailCtrl'
+            when('/acategory_sizes/:categorySizeId', {
+                templateUrl : 'category_size_detail.html',
+                controller: 'CategorySizeDetailCtrl'
             }).
             otherwise({
-                redirectTo: '/atop_categories'
+                redirectTo: '/acategory_sizes'
             });
     }]);

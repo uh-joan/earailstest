@@ -1,7 +1,7 @@
 angular
     .module('EA')
-    .controller('TopCategoriesCtrl', ['TopCategory', '$scope', function (TopCategory, $scope) {
+    .controller('CategorySizesCtrl', ['CategorySize', '$scope', function (CategorySize, $scope) {
 
-        $scope.topCategories = TopCategory.query();
+        $scope.categorySizes = CategorySize.query();
 
     }])

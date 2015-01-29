@@ -76,7 +76,7 @@ module Api
 
       # Never trust parameters from the scary internet, only allow the white list through.
       def product_category_size_params
-        params.require(:category_size).permit(:prefixLabelOnline, :prefixLabelPrint, :prefixLabelPos, :postfixLabelOnline, :postfixLabelPrint, :postfixLabelPos, :top_category_id, :user_id)
+        params.require(:category_size).permit(:prefixLabelOnline, :prefixLabelPrint, :prefixLabelPos, :postfixLabelOnline, :postfixLabelPrint, :postfixLabelPos, :group_id, :user_id)
       end
     end
 

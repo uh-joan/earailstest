@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129143551) do
+ActiveRecord::Schema.define(version: 20150129161150) do
 
   create_table "addon_list_items", force: true do |t|
     t.string   "name"
@@ -61,13 +61,13 @@ ActiveRecord::Schema.define(version: 20150129143551) do
     t.string   "postfixLabelOnline"
     t.string   "postfixLabelPrint"
     t.string   "postfixLabelPos"
-    t.integer  "top_category_id"
+    t.integer  "group_id"
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
 
-  add_index "category_sizes", ["top_category_id"], name: "index_category_sizes_on_top_category_id"
+  add_index "category_sizes", ["group_id"], name: "index_category_sizes_on_group_id"
   add_index "category_sizes", ["user_id"], name: "index_category_sizes_on_user_id"
 
   create_table "group_addon_list_prices", force: true do |t|
@@ -118,12 +118,10 @@ ActiveRecord::Schema.define(version: 20150129143551) do
     t.boolean  "enabled"
     t.boolean  "deleted"
     t.integer  "user_id"
-    t.integer  "top_category_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
-  add_index "groups", ["top_category_id"], name: "index_groups_on_top_category_id"
   add_index "groups", ["user_id"], name: "index_groups_on_user_id"
 
   create_table "item_sizes", force: true do |t|
@@ -227,18 +225,6 @@ ActiveRecord::Schema.define(version: 20150129143551) do
   add_index "orders", ["order_status_id"], name: "index_orders_on_order_status_id"
   add_index "orders", ["order_type_id"], name: "index_orders_on_order_type_id"
   add_index "orders", ["user_id"], name: "index_orders_on_user_id"
-
-  create_table "top_categories", force: true do |t|
-    t.string   "name"
-    t.string   "shortDescription"
-    t.boolean  "enabled"
-    t.boolean  "deleted"
-    t.integer  "user_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  add_index "top_categories", ["user_id"], name: "index_top_categories_on_user_id"
 
   create_table "user_types", force: true do |t|
     t.string   "name"

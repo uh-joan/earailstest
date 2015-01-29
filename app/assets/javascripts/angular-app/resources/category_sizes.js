@@ -1,7 +1,7 @@
 angular
 .module('EA')
-.factory('TopCategory',['$resource', function ($resource){
-    return $resource('http://localhost:3000/api/v1/top_categories', {}, {
+.factory('CategorySize',['$resource', function ($resource){
+    return $resource('http://localhost:3000/api/v1/category_sizes', {}, {
        query : {
            method: 'GET',
            cache: true,

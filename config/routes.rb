@@ -23,8 +23,7 @@ Rails.application.routes.draw do
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  resources :top_categories
-  get '/top_categories', to: 'top_categories#index', as: 'top_categories_path'
+  
   resources :category_sizes
   get '/category_sizes', to: 'category_sizes#index', as: 'category_sizes_path'
   resources :group_addon_lists
@@ -63,13 +62,15 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
-      resources :top_categories
       resources :category_sizes
       resources :addons
       resources :addon_lists
       resources :addon_list_items
       resources :groups
       resources :group_addon_lists
+      resources :group_addon_list_prices
+      resources :items
+      resources :item_types
     end
   end
 end
