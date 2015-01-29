@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   resources :group_addon_lists
   get '/group_addon_lists', to: 'group_addon_lists#index', as: 'group_addon_lists_path'
   resources :groups
-  get '/groups', to: 'groups#index', as: 'product_groups_path'
+  get '/groups', to: 'groups#index', as: 'groups_path'
   resources :addon_lists
   get '/addon_lists', to: 'addon_lists#index', as: 'addon_lists_path'
   resources :addon_list_items
