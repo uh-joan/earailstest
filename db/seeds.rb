@@ -255,10 +255,25 @@ GroupAddonListPrice.create(cost: '0', prices: '0.00', enabled: '1', deleted: '0'
                            group_id: '3', group_addon_list_id: '4', addon_id: '7', category_size_id: '7',user_id: '1')
 
 ItemType.delete_all
-ItemType.create()
+ItemType.create(name: '',user_id: '1')
+ItemType.create(name: 'Hot',user_id: '1')
+ItemType.create(name: 'Very Hot',user_id: '1')
+ItemType.create(name: 'Vegetarian',user_id: '1')
 
 Item.delete_all
-Item.create()
+Item.create(name:'Peperoni', enabled:'1', deleted: '0', user_id: '1', group_id: '1' ,item_type_id: '1')
+Item.create(name:'Mexican', enabled:'1', deleted: '0', user_id: '1', group_id: '1' ,item_type_id: '2')
+Item.create(name:'Veg Supreme', enabled:'1', deleted: '0', user_id: '1', group_id: '1' ,item_type_id: '3')
+
+Item.create(name:'Beef Burger', enabled:'1', deleted: '0', user_id: '1', group_id: '3' ,item_type_id: '1')
+Item.create(name:'Chili Burger', enabled:'1', deleted: '0', user_id: '1', group_id: '3' ,item_type_id: '3')
+
+Item.create(name:'SF Chicken', enabled:'1', deleted: '0', user_id: '1', group_id: '4' ,item_type_id: '1')
+Item.create(name:'Salad', enabled:'1', deleted: '0', user_id: '1', group_id: '4' ,item_type_id: '1')
+Item.create(name:'Can of Pepsi', enabled:'1', deleted: '0', user_id: '1', group_id: '4' ,item_type_id: '1')
+
 
 ItemSize.delete_all
-ItemSize.create()
+ItemSize.create(name: 'Small', item_id: '1',user_id: '1')
+ItemSize.create(name: 'Medium', item_id: '1',user_id: '1')
+ItemSize.create(name: 'Large', item_id: '1',user_id: '1')
