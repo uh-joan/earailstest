@@ -1,5 +1,5 @@
 class ItemTypesController < ApplicationController
-  before_action :set_product_item_type, only: [:show, :edit, :update, :destroy]
+  before_action :set_item_type, only: [:show, :edit, :update, :destroy]
 
   # respond_to :html
 
@@ -21,13 +21,13 @@ class ItemTypesController < ApplicationController
   end
 
   def create
-    @item_type = ItemType.new(product_item_type_params)
+    @item_type = ItemType.new(item_type_params)
     # @item_type.save
     # respond_with(@item_type)
 
     respond_to do |format|
       if @item_type.save
-        format.html { redirect_to @item_type, notice: 'Product item was successfully created.' }
+        format.html { redirect_to @item_type, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item_type}
       else
         format.html { render :new }
@@ -37,12 +37,12 @@ class ItemTypesController < ApplicationController
   end
 
   def update
-    # @item_type.update(product_item_type_params)
+    # @item_type.update(item_type_params)
     # respond_with(@item_type)
 
     respond_to do |format|
-      if @item_type.update(product_item_type_params)
-        format.html { redirect_to @item_type, notice: 'Product item type was successfully updated.' }
+      if @item_type.update(item_type_params)
+        format.html { redirect_to @item_type, notice: 'Item type was successfully updated.' }
         format.json { render :show, status: :ok, location: @item_type }
       else
         format.html { render :edit }
@@ -55,18 +55,18 @@ class ItemTypesController < ApplicationController
     @item_type.destroy
     # respond_with(@item_type)
     respond_to do |format|
-      format.html { redirect_to item_types_url, notice: 'Product item type was successfully destroyed.' }
+      format.html { redirect_to item_types_url, notice: 'Item type was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    def set_product_item_type
+    def set_item_type
       @item_type = ItemType.find(params[:id])
       # @group = Group.find(params[:id])
     end
 
-    def product_item_type_params
+    def item_type_params
       params.require(:item_type).permit(:name, :user_id)
     end
 end

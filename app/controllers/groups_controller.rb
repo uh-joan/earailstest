@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :set_product_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   # GET /groups
   # GET /groups.json
@@ -24,11 +24,11 @@ class GroupsController < ApplicationController
   # POST /groups
   # POST /groups.json
   def create
-    @group = Group.new(product_group_params)
+    @group = Group.new(group_params)
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to @group, notice: 'Product group was successfully created.' }
+        format.html { redirect_to @group, notice: 'Group was successfully created.' }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new }
@@ -41,8 +41,8 @@ class GroupsController < ApplicationController
   # PATCH/PUT /groups/1.json
   def update
     respond_to do |format|
-      if @group.update(product_group_params)
-        format.html { redirect_to @group, notice: 'Product group was successfully updated.' }
+      if @group.update(group_params)
+        format.html { redirect_to @group, notice: 'Group was successfully updated.' }
         format.json { render :show, status: :ok, location: @group }
       else
         format.html { render :edit }
@@ -56,19 +56,19 @@ class GroupsController < ApplicationController
   def destroy
     @group.destroy
     respond_to do |format|
-      format.html { redirect_to groups_url, notice: 'Product group was successfully destroyed.' }
+      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_product_group
+    def set_group
       @group = Group.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def product_group_params
+    def group_params
       params.require(:group).permit(:name, :description, :onlineViewLabel, :posViewLabel, :posViewLabel, :headerImagePath, :displayIndex, :visibleOnline, :visibleOnPos, :enabled, :deleted, :user_id, :top_category_id)
     end
 end

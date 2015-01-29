@@ -1,5 +1,5 @@
 class GroupAddonListPricesController < ApplicationController
-  before_action :set_product_group_add_on_list_price, only: [:show, :edit, :update, :destroy]
+  before_action :set_group_add_on_list_price, only: [:show, :edit, :update, :destroy]
 
   def index
     @group_addon_list_prices = GroupAddonListPrice.all
@@ -19,13 +19,13 @@ class GroupAddonListPricesController < ApplicationController
   end
 
   def create
-    @group_addon_list_price = GroupAddonListPrice.new(product_group_add_on_list_price_params)
+    @group_addon_list_price = GroupAddonListPrice.new(group_add_on_list_price_params)
     # @group_addon_list_price.save
     # respond_with(@group_addon_list_price)
 
     respond_to do |format|
       if @group_addon_list_price.save
-        format.html { redirect_to @group_addon_list_price, notice: 'Product group add on list price was successfully created.' }
+        format.html { redirect_to @group_addon_list_price, notice: 'Group add on list price was successfully created.' }
         format.json { render :show, status: :created, location: @group_addon_list_price }
       else
         format.html { render :new }
@@ -35,12 +35,12 @@ class GroupAddonListPricesController < ApplicationController
   end
 
   def update
-    # @group_addon_list_price.update(product_group_add_on_list_price_params)
+    # @group_addon_list_price.update(group_add_on_list_price_params)
     # respond_with(@group_addon_list_price)
 
     respond_to do |format|
-      if @group_addon_list_price.update(product_group_add_on_list_price_params)
-        format.html { redirect_to @group_addon_list_price, notice: 'Product group add on list price was successfully updated.' }
+      if @group_addon_list_price.update(group_add_on_list_price_params)
+        format.html { redirect_to @group_addon_list_price, notice: 'Group add on list price was successfully updated.' }
         format.json { render :show, status: :ok, location: @group_addon_list_price }
       else
         format.html { render :edit }
@@ -53,17 +53,17 @@ class GroupAddonListPricesController < ApplicationController
     @group_addon_list_price.destroy
     # respond_with(@group_addon_list_price)
     respond_to do |format|
-      format.html { redirect_to group_addon_list_prices_url, notice: 'Product group add on list price was successfully destroyed.' }
+      format.html { redirect_to group_addon_list_prices_url, notice: 'Group add on list price was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    def set_product_group_add_on_list_price
+    def set_group_add_on_list_price
       @group_addon_list_price = GroupAddonListPrice.find(params[:id])
     end
 
-    def product_group_add_on_list_price_params
+    def group_add_on_list_price_params
       params.require(:group_addon_list_price).permit(:cost, :prices, :enabled, :deleted, :group_id, :group_addon_list_id, :addon_id, :category_size_id, :user_id)
     end
 end

@@ -1,5 +1,5 @@
 class OrderTypesController < ApplicationController
-  before_action :set_sales_order_type, only: [:show, :edit, :update, :destroy]
+  before_action :set_order_type, only: [:show, :edit, :update, :destroy]
 
   # GET /order_types
   # GET /order_types.json
@@ -24,11 +24,11 @@ class OrderTypesController < ApplicationController
   # POST /order_types
   # POST /order_types.json
   def create
-    @order_type = OrderType.new(sales_order_type_params)
+    @order_type = OrderType.new(order_type_params)
 
     respond_to do |format|
       if @order_type.save
-        format.html { redirect_to @order_type, notice: 'Sales order_type was successfully created.' }
+        format.html { redirect_to @order_type, notice: ' order_type was successfully created.' }
         format.json { render :show, status: :created, location: @order_type }
       else
         format.html { render :new }
@@ -41,8 +41,8 @@ class OrderTypesController < ApplicationController
   # PATCH/PUT /order_types/1.json
   def update
     respond_to do |format|
-      if @order_type.update(sales_order_type_params)
-        format.html { redirect_to @order_type, notice: 'Sales order_type was successfully updated.' }
+      if @order_type.update(order_type_params)
+        format.html { redirect_to @order_type, notice: ' order_type was successfully updated.' }
         format.json { render :show, status: :ok, location: @order_type }
       else
         format.html { render :edit }
@@ -56,19 +56,19 @@ class OrderTypesController < ApplicationController
   def destroy
     @order_type.destroy
     respond_to do |format|
-      format.html { redirect_to order_types_url, notice: 'Sales order_type was successfully destroyed.' }
+      format.html { redirect_to order_types_url, notice: ' order_type was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
   # Use callbacks to share common setup or constraints between actions.
-  def set_sales_order_type
+  def set_order_type
     @order_type = OrderType.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
-  def sales_order_type_params
+  def order_type_params
     params.require(:order_type).permit(:name, :user_id)
   end
 end

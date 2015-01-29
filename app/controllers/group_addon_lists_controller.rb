@@ -1,5 +1,5 @@
 class GroupAddonListsController < ApplicationController
-  before_action :set_product_group_add_on_list, only: [:show, :edit, :update, :destroy]
+  before_action :group_add_on_list_price_params, only: [:show, :edit, :update, :destroy]
 
   # GET /group_addon_lists
   # GET /group_addon_lists.json
@@ -24,7 +24,7 @@ class GroupAddonListsController < ApplicationController
   # POST /group_addon_lists
   # POST /group_addon_lists.json
   def create
-    @group_addon_list = GroupAddonList.new(product_group_add_on_list_params)
+    @group_addon_list = GroupAddonList.new(group_add_on_list_params)
 
     respond_to do |format|
       if @group_addon_list.save
@@ -41,8 +41,8 @@ class GroupAddonListsController < ApplicationController
   # PATCH/PUT /group_addon_lists/1.json
   def update
     respond_to do |format|
-      if @group_addon_list.update(product_group_add_on_list_params)
-        format.html { redirect_to @group_addon_list, notice: 'Product group add on list was successfully updated.' }
+      if @group_addon_list.update(group_add_on_list_params)
+        format.html { redirect_to @group_addon_list, notice: 'Group add on list was successfully updated.' }
         format.json { render :show, status: :ok, location: @group_addon_list }
       else
         format.html { render :edit }
@@ -56,19 +56,19 @@ class GroupAddonListsController < ApplicationController
   def destroy
     @group_addon_list.destroy
     respond_to do |format|
-      format.html { redirect_to group_addon_lists_url, notice: 'Product group add on list was successfully destroyed.' }
+      format.html { redirect_to group_addon_lists_url, notice: 'Group add on list was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_product_group_add_on_list
+    def group_add_on_list_price_params
       @group_addon_list = GroupAddonList.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def product_group_add_on_list_params
+    def group_add_on_list_params
       params.require(:group_addon_list).permit(:name, :displayIndex, :logicIndex, :required, :group_id, :user_id)
     end
 end

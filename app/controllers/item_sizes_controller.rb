@@ -1,5 +1,5 @@
 class ItemSizesController < ApplicationController
-  before_action :set_product_item_size, only: [:show, :edit, :update, :destroy]
+  before_action :set_item_size, only: [:show, :edit, :update, :destroy]
 
   # respond_to :html
 
@@ -21,13 +21,13 @@ class ItemSizesController < ApplicationController
   end
 
   def create
-    @item_size = ItemSize.new(product_item_size_params)
+    @item_size = ItemSize.new(item_size_params)
     # @item_size.save
     # respond_with(@item_size)
 
     respond_to do |format|
       if @item_size.save
-        format.html { redirect_to @item_size, notice: 'Product item size was successfully created.' }
+        format.html { redirect_to @item_size, notice: 'Item size was successfully created.' }
         format.json { render :show, status: :created, location: @item_size}
       else
         format.html { render :new }
@@ -37,12 +37,12 @@ class ItemSizesController < ApplicationController
   end
 
   def update
-    @item_size.update(product_item_size_params)
+    @item_size.update(item_size_params)
     # respond_with(@item_size)
 
     respond_to do |format|
-      if @item_size.update(product_item_size_params)
-        format.html { redirect_to @item_size, notice: 'Product item size was successfully updated.' }
+      if @item_size.update(item_size_params)
+        format.html { redirect_to @item_size, notice: 'Item size was successfully updated.' }
         format.json { render :show, status: :ok, location: @item_size }
       else
         format.html { render :edit }
@@ -56,17 +56,17 @@ class ItemSizesController < ApplicationController
     # respond_with(@item_size)
 
     respond_to do |format|
-      format.html { redirect_to item_sizes_url, notice: 'Product item size was successfully destroyed.' }
+      format.html { redirect_to item_sizes_url, notice: 'Item size was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    def set_product_item_size
+    def set_item_size
       @item_size = ItemSize.find(params[:id])
     end
 
-    def product_item_size_params
+    def item_size_params
       params.require(:item_size).permit(:name, :item_id, :user_id)
     end
 end
