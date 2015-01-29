@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
-  
+
   resources :category_sizes
   get '/category_sizes', to: 'category_sizes#index', as: 'category_sizes_path'
   resources :group_addon_lists
