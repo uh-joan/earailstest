@@ -65,6 +65,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :top_categories
       resources :category_sizes
+      resources :addons
+      resources :addon_lists
+      resources :addon_list_items
+      resources :groups
+      resources :group_addon_lists
     end
   end
 end

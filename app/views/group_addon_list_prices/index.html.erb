@@ -26,7 +26,7 @@
         <td><%= product_group_add_on_list_price.enabled %></td>
         <td><%= product_group_add_on_list_price.deleted %></td>
         <td><%= Group.find(product_group_add_on_list_price.group_id).name %></td>
-        <td><%= GroupAddonList.find(product_group_add_on_list_price.group_addon_list_id).name %></td>
+        <td><%= product_group_add_on_list_price.group_addon_list.name %></td>
         <td><%= Addon.find(product_group_add_on_list_price.addon_id).name %></td>
         <td><%= CategorySize.find(product_group_add_on_list_price.category_size_id).prefixLabelOnline %></td>
         <td><%= User.find(product_group_add_on_list_price.user_id).name %></td>
