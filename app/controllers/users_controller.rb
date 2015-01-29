@@ -20,6 +20,14 @@ class UsersController < ApplicationController
     if @user.save
       @user.send_activation_email
       flash[:info] = "Please check your email to activate your account."
+
+      # Amir: ToDo: only to be used on 
+      if ENV['RAILS_ENV'].to_s == 'development' || ENV['RAILS_ENV'].to_s == ''
+        logger.info ("Auto activate user when rails environment is :")
+        logger.info (ENV['RAILS_ENV'].to_s)
+        @user.activate
+      end
+
       redirect_to root_url
     else
       render 'new'
