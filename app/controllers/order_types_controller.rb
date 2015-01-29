@@ -1,47 +1,74 @@
 class OrderTypesController < ApplicationController
   before_action :set_sales_order_type, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
-
+  # GET /order_types
+  # GET /order_types.json
   def index
-    @sales_order_types = OrderType.all
-    respond_with(@sales_order_types)
+    @order_types = OrderType.all
   end
 
+  # GET /order_types/1
+  # GET /order_types/1.json
   def show
-    respond_with(@sales_order_type)
   end
 
+  # GET /order_types/new
   def new
-    @sales_order_type = OrderType.new
-    respond_with(@sales_order_type)
+    @order_type = OrderType.new
   end
 
+  # GET /order_types/1/edit
   def edit
   end
 
+  # POST /order_types
+  # POST /order_types.json
   def create
-    @sales_order_type = OrderType.new(sales_order_type_params)
-    @sales_order_type.save
-    respond_with(@sales_order_type)
+    @order_type = OrderType.new(sales_order_type_params)
+
+    respond_to do |format|
+      if @order_type.save
+        format.html { redirect_to @order_type, notice: 'Sales order_type was successfully created.' }
+        format.json { render :show, status: :created, location: @order_type }
+      else
+        format.html { render :new }
+        format.json { render json: @order_type.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
+  # PATCH/PUT /order_types/1
+  # PATCH/PUT /order_types/1.json
   def update
-    @sales_order_type.update(sales_order_type_params)
-    respond_with(@sales_order_type)
+    respond_to do |format|
+      if @order_type.update(sales_order_type_params)
+        format.html { redirect_to @order_type, notice: 'Sales order_type was successfully updated.' }
+        format.json { render :show, status: :ok, location: @order_type }
+      else
+        format.html { render :edit }
+        format.json { render json: @order_type.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
+  # DELETE /order_types/1
+  # DELETE /order_types/1.json
   def destroy
-    @sales_order_type.destroy
-    respond_with(@sales_order_type)
+    @order_type.destroy
+    respond_to do |format|
+      format.html { redirect_to order_types_url, notice: 'Sales order_type was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
-    def set_sales_order_type
-      @sales_order_type = OrderType.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_sales_order_type
+    @order_type = OrderType.find(params[:id])
+  end
 
-    def sales_order_type_params
-      params.require(:sales_order_type).permit(:name, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def sales_order_type_params
+    params.require(:order_type).permit(:name, :user_id)
+  end
 end

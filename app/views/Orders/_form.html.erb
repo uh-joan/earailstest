@@ -1,7 +1,7 @@
 <%= form_for(@order) do |f| %>
   <% if @order.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this sales_order from being saved:</h2>
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
 
       <ul>
       <% @order.errors.full_messages.each do |message| %>
@@ -40,16 +40,16 @@
     <%= f.check_box :deleted %>
   </div>
   <div class="field">
-    <%= f.label :sales_order_type_id %><br>
-    <%= f.text_field :sales_order_type_id %>
+    <%= f.label :order_type_id %><br>
+    <%= f.text_field :order_type_id %>
   </div>
   <div class="field">
-    <%= f.label :sales_order_status_id %><br>
-    <%= f.text_field :sales_order_status_id %>
+    <%= f.label :order_status_id %><br>
+    <%= f.text_field :order_status_id %>
   </div>
   <div class="field">
-    <%= f.label :sales_order_source_id %><br>
-    <%= f.text_field :sales_order_source_id %>
+    <%= f.label :order_source_id %><br>
+    <%= f.text_field :order_source_id %>
   </div>
   <div class="field">
     <%= f.label :user_id %><br>

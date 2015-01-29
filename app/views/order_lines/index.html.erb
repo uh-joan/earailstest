@@ -32,8 +32,8 @@
         <td><%= order_line.addonCost %></td>
         <td><%= order_line.quantity %></td>
         <td><%= order_line.deleted %></td>
-        <td><%= order_line.order %></td>
-        <td><%= order_line.user %></td>
+        <td><%= order_line.order.name %></td>
+        <td><%= order_line.user.name %></td>
         <td><%= link_to 'Show', order_line %></td>
         <td><%= link_to 'Edit', edit_order_line_path(order_line) %></td>
         <td><%= link_to 'Destroy', order_line, method: :delete, data: { confirm: 'Are you sure?' } %></td>

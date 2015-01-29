@@ -1,47 +1,74 @@
 class OrderSourcesController < ApplicationController
-  before_action :set_sales_order_source, only: [:show, :edit, :update, :destroy]
+  before_action :set_order_source, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
-
+  # GET /order_sources
+  # GET /order_sources.json
   def index
     @order_sources = OrderSource.all
-    respond_with(@order_sources)
   end
 
+  # GET /order_sources/1
+  # GET /order_sources/1.json
   def show
-    respond_with(@order_source)
   end
 
+  # GET /order_sources/new
   def new
     @order_source = OrderSource.new
-    respond_with(@order_source)
   end
 
+  # GET /order_sources/1/edit
   def edit
   end
 
+  # POST /order_sources
+  # POST /order_sources.json
   def create
-    @order_source = OrderSource.new(sales_order_source_params)
-    @order_source.save
-    respond_with(@order_source)
+    @order_source = OrderSource.new(order_source_params)
+
+    respond_to do |format|
+      if @order_source.save
+        format.html { redirect_to @order_source, notice: 'Sales order_source was successfully created.' }
+        format.json { render :show, status: :created, location: @order_source }
+      else
+        format.html { render :new }
+        format.json { render json: @order_source.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
+  # PATCH/PUT /order_sources/1
+  # PATCH/PUT /order_sources/1.json
   def update
-    @order_source.update(sales_order_source_params)
-    respond_with(@order_source)
+    respond_to do |format|
+      if @order_source.update(order_source_params)
+        format.html { redirect_to @order_source, notice: 'Sales order_source was successfully updated.' }
+        format.json { render :show, status: :ok, location: @order_source }
+      else
+        format.html { render :edit }
+        format.json { render json: @order_source.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
+  # DELETE /order_sources/1
+  # DELETE /order_sources/1.json
   def destroy
     @order_source.destroy
-    respond_with(@order_source)
+    respond_to do |format|
+      format.html { redirect_to order_sources_url, notice: 'Sales order_source was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
-    def set_sales_order_source
-      @order_source = OrderSource.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_order_source
+    @order_source = OrderSource.find(params[:id])
+  end
 
-    def sales_order_source_params
-      params.require(:order_source).permit(:name, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def order_source_params
+    params.require(:order_source).permit(:name, :user_id)
+  end
 end

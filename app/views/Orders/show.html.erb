@@ -37,23 +37,23 @@
 
 <p>
   <strong>Sales order type:</strong>
-  <%= OrderType.find(@order.sales_order_type_id).name %>
+  <%= OrderType.find(@order.order_type_id).name %>
 </p>
 
 <p>
   <strong>Sales order status:</strong>
-  <%= OrderStatus.find(@order.sales_order_status_id).name %>
+  <%= OrderStatus.find(@order.order_status_id).name %>
 </p>
 
 <p>
   <strong>Sales order source:</strong>
-  <%= OrderSource.find(@order.sales_order_source_id).name %>
+  <%= @order.order_source.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= User.find(@order.user_id).name %>
+  <%= @order.user.name %>
 </p>
 
-<%= link_to 'Edit', edit_sales_order_path(@order) %> |
-<%= link_to 'Back', sales_orders_path %>
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

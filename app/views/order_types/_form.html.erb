@@ -1,10 +1,10 @@
-<%= form_for(@sales_order_type) do |f| %>
-  <% if @sales_order_type.errors.any? %>
+<%= form_for(@order_type) do |f| %>
+  <% if @order_type.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@sales_order_type.errors.count, "error") %> prohibited this sales_order_type from being saved:</h2>
+      <h2><%= pluralize(@order_type.errors.count, "error") %> prohibited this order_type from being saved:</h2>
 
       <ul>
-      <% @sales_order_type.errors.full_messages.each do |message| %>
+      <% @order_type.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
