@@ -5,7 +5,8 @@ class CreateGroups < ActiveRecord::Migration
       t.string :description
       t.string :onlineViewLabel
       t.string :posViewLabel
-      t.string :posViewLabel
+      #amir: changed posViewLabel to printViewLabel
+      t.string :printViewLabel
       t.string :headerImagePath
       t.integer :displayIndex
       t.boolean :visibleOnline

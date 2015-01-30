@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20150129161150) do
     t.string   "description"
     t.string   "onlineViewLabel"
     t.string   "posViewLabel"
+    t.string   "printViewLabel"
     t.string   "headerImagePath"
     t.integer  "displayIndex"
     t.boolean  "visibleOnline"
@@ -126,12 +127,14 @@ ActiveRecord::Schema.define(version: 20150129161150) do
 
   create_table "item_sizes", force: true do |t|
     t.string   "name"
+    t.integer  "category_size_id"
     t.integer  "item_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
+  add_index "item_sizes", ["category_size_id"], name: "index_item_sizes_on_category_size_id"
   add_index "item_sizes", ["item_id"], name: "index_item_sizes_on_item_id"
   add_index "item_sizes", ["user_id"], name: "index_item_sizes_on_user_id"
 
@@ -146,13 +149,23 @@ ActiveRecord::Schema.define(version: 20150129161150) do
 
   create_table "items", force: true do |t|
     t.string   "name"
+    t.string   "description"
+    t.float    "cost"
+    t.float    "price"
+    t.string   "onlineViewLabel"
+    t.string   "posViewLabel"
+    t.string   "printLabel"
+    t.string   "imagePath"
+    t.integer  "displayIndex"
+    t.boolean  "visibleOnline"
+    t.boolean  "visibleOnPos"
     t.boolean  "enabled"
     t.boolean  "deleted"
     t.integer  "user_id"
     t.integer  "group_id"
     t.integer  "item_type_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "items", ["group_id"], name: "index_items_on_group_id"
