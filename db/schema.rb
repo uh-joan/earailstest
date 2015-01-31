@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129161150) do
+ActiveRecord::Schema.define(version: 20150131220645) do
 
   create_table "addon_list_items", force: true do |t|
     t.string   "name"
@@ -124,6 +124,18 @@ ActiveRecord::Schema.define(version: 20150129161150) do
   end
 
   add_index "groups", ["user_id"], name: "index_groups_on_user_id"
+
+  create_table "item_addons", force: true do |t|
+    t.integer  "item_id"
+    t.integer  "addon_id"
+    t.boolean  "included"
+    t.boolean  "default"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "item_addons", ["addon_id"], name: "index_item_addons_on_addon_id"
+  add_index "item_addons", ["item_id"], name: "index_item_addons_on_item_id"
 
   create_table "item_sizes", force: true do |t|
     t.string   "name"

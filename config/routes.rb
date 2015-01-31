@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :item_addons
+
   resources :products
 
   get 'password_resets/new'

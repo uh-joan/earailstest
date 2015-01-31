@@ -5,4 +5,5 @@ class Item < ActiveRecord::Base
   #amir: removed this > has_many :addon_list_items
   #amir: todo: add association to a model to hold addons for a given item
   has_many :item_sizes
+  has_many :item_addons
 end

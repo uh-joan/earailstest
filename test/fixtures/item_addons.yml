@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item_id: 
+  addon_id: 
+  included: false
+  default: false
+
+two:
+  item_id: 
+  addon_id: 
+  included: false
+  default: false

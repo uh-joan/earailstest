@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Item Addons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Addon</th>
+      <th>Included</th>
+      <th>Default</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @item_addons.each do |item_addon| %>
+      <tr>
+        <td><%= item_addon.item %></td>
+        <td><%= item_addon.addon %></td>
+        <td><%= item_addon.included %></td>
+        <td><%= item_addon.default %></td>
+        <td><%= link_to 'Show', item_addon %></td>
+        <td><%= link_to 'Edit', edit_item_addon_path(item_addon) %></td>
+        <td><%= link_to 'Destroy', item_addon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item addon', new_item_addon_path %>
