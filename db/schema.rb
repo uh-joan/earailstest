@@ -95,11 +95,12 @@ ActiveRecord::Schema.define(version: 20150131220645) do
     t.integer  "displayIndex"
     t.integer  "logicIndex"
     t.boolean  "required"
+    t.integer  "allowed_swap_qty"
     t.integer  "group_id"
     t.integer  "user_id"
     t.integer  "addon_list_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_index "group_addon_lists", ["addon_list_id"], name: "index_group_addon_lists_on_addon_list_id"
@@ -128,8 +129,9 @@ ActiveRecord::Schema.define(version: 20150131220645) do
   create_table "item_addons", force: true do |t|
     t.integer  "item_id"
     t.integer  "addon_id"
-    t.boolean  "included"
-    t.boolean  "default"
+    t.boolean  "def_addon"
+    t.integer  "def_qty"
+    t.integer  "qty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -139,6 +141,8 @@ ActiveRecord::Schema.define(version: 20150131220645) do
 
   create_table "item_sizes", force: true do |t|
     t.string   "name"
+    t.float    "cost"
+    t.float    "price"
     t.integer  "category_size_id"
     t.integer  "item_id"
     t.integer  "user_id"
@@ -162,8 +166,6 @@ ActiveRecord::Schema.define(version: 20150131220645) do
   create_table "items", force: true do |t|
     t.string   "name"
     t.string   "description"
-    t.float    "cost"
-    t.float    "price"
     t.string   "onlineViewLabel"
     t.string   "posViewLabel"
     t.string   "printLabel"
