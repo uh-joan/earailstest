@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>RailsDependency</ID>
+  <OriginalElement>#earailstemp</OriginalElement>
+  <nodes>
+    <node x="2393.0082644628105" y="614.593388429752">User</node>
+    <node x="2498.5074380165292" y="461.6495867768596">UserType</node>
+    <node x="1810.1140495867767" y="949.3107438016528">OrderLine</node>
+    <node x="2099.3867768595037" y="458.33719008264467">OrderStatus</node>
+    <node x="1787.5140495867772" y="613.8314049586777">Order</node>
+    <node x="-471.1355371900827" y="1393.3999999999999">TopCategory</node>
+    <node x="-154.4727272727273" y="957.2181818181818">GroupAddonList</node>
+    <node x="205.9570247933882" y="974.0429752066116">GroupAddonListPrice</node>
+    <node x="245.55537190082669" y="546.0495867768594">Addon</node>
+    <node x="-78.72727272727263" y="1200.7537190082644">Group</node>
+    <node x="-132.80330578512383" y="548.3586776859506">AddonList</node>
+    <node x="1059.3735537190082" y="710.2247933884297">Item</node>
+    <node x="63.25289256198357" y="398.6826446280992">AddonListItem</node>
+    <node x="1717.7454545454543" y="464.02644628099176">OrderSource</node>
+    <node x="1066.697520661157" y="1150.7669421487603">ItemType</node>
+    <node x="1262.5074380165286" y="1141.499173553719">ItemSize</node>
+    <node x="1161.304132231405" y="529.7388429752067">ItemAddon</node>
+    <node x="1907.5289256198344" y="458.99338842975203">OrderType</node>
+    <node x="505.3719008264461" y="1357.280991735537">CategorySize</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ItemType" target="Item">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="User" target="Order">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ItemAddon" target="Addon">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="OrderSource" target="Order">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="User" target="UserType">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Group" target="CategorySize">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Item" target="ItemAddon">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Item" target="ItemSize">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="ItemSize" target="CategorySize">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="GroupAddonList" target="GroupAddonListPrice">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="AddonListItem" target="Addon">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="AddonListItem" target="AddonList">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="GroupAddonListPrice" target="Addon">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="GroupAddonList" target="AddonList">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Order" target="OrderLine">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="OrderType" target="Order">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Group" target="GroupAddonList">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="OrderLine" target="Item">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="Group" target="Item">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="OrderStatus" target="Order">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.316257187663356" x="1261.2677685950414" y="1006.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Association fields</Category>
+    <Category>Migration fields</Category>
+  </Categories>
+</Diagram>
+

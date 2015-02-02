@@ -129,18 +129,18 @@ CategorySize.create(prefixLabelOnline: 'Each', prefixLabelPrint: '', prefixLabel
 
 
 GroupAddonList.delete_all
-GroupAddonList.create(displayIndex: '1', logicIndex: '0', required: '0',
+GroupAddonList.create(displayIndex: '1', logicIndex: '0', required: '0', allowed_swap_qty: 2,
                       group_id: '1', addon_list_id: '1', user_id: '1')
-GroupAddonList.create(displayIndex: '2', logicIndex: '0', required: '0',
+GroupAddonList.create(displayIndex: '2', logicIndex: '0', required: '0', allowed_swap_qty: 0,
                       group_id: '1', addon_list_id: '3', user_id: '1')
 
-GroupAddonList.create(displayIndex: '1', logicIndex: '0', required: '0',
+GroupAddonList.create(displayIndex: '1', logicIndex: '0', required: '0', allowed_swap_qty: 2,
                       group_id: '2', addon_list_id: '1', user_id: '1')
 
 
-GroupAddonList.create(displayIndex: '1', logicIndex: '0', required: '0',
+GroupAddonList.create(displayIndex: '1', logicIndex: '0', required: '0', allowed_swap_qty: 0,
                       group_id: '3', addon_list_id: '2', user_id: '1')
-GroupAddonList.create(displayIndex: '1', logicIndex: '0', required: '0',
+GroupAddonList.create(displayIndex: '1', logicIndex: '0', required: '0', allowed_swap_qty: 0,
                       group_id: '3', addon_list_id: '4', user_id: '1')
 
 
@@ -272,8 +272,81 @@ Item.create(name:'SF Chicken', enabled:'1', deleted: '0', user_id: '1', group_id
 Item.create(name:'Salad', enabled:'1', deleted: '0', user_id: '1', group_id: '4' ,item_type_id: '1')
 Item.create(name:'Can of Pepsi', enabled:'1', deleted: '0', user_id: '1', group_id: '4' ,item_type_id: '1')
 
+Item.create(name:'Special Calzone', enabled:'1', deleted: '0', user_id: '1', group_id: '1' ,item_type_id: '1')
+
+
 
 ItemSize.delete_all
-ItemSize.create(name: 'Small', item_id: '1',user_id: '1')
-ItemSize.create(name: 'Medium', item_id: '1',user_id: '1')
-ItemSize.create(name: 'Large', item_id: '1',user_id: '1')
+ItemSize.create(item_id: '1', category_size_id: '1', cost: '0', price: '2.00',user_id: '1')
+ItemSize.create(item_id: '1', category_size_id: '2', cost: '0', price: '3.00',user_id: '1')
+ItemSize.create(item_id: '1', category_size_id: '3', cost: '0', price: '4.00',user_id: '1')
+
+ItemSize.create(item_id: '2', category_size_id: '1', cost: '0', price: '2.50',user_id: '1')
+ItemSize.create(item_id: '2', category_size_id: '2', cost: '0', price: '3.50',user_id: '1')
+ItemSize.create(item_id: '2', category_size_id: '3', cost: '0', price: '4.50',user_id: '1')
+
+ItemSize.create(item_id: '3', category_size_id: '1', cost: '0', price: '1.50',user_id: '1')
+ItemSize.create(item_id: '3', category_size_id: '2', cost: '0', price: '2.50',user_id: '1')
+ItemSize.create(item_id: '3', category_size_id: '3', cost: '0', price: '3.50',user_id: '1')
+
+ItemSize.create(item_id: '4', category_size_id: '6', cost: '0', price: '5.50',user_id: '1')
+ItemSize.create(item_id: '4', category_size_id: '7', cost: '0', price: '6.50',user_id: '1')
+
+ItemSize.create(item_id: '5', category_size_id: '6', cost: '0', price: '5.50',user_id: '1')
+ItemSize.create(item_id: '5', category_size_id: '7', cost: '0', price: '6.50',user_id: '1')
+
+ItemSize.create(item_id: '6', category_size_id: '8', cost: '0', price: '1.00',user_id: '1')
+ItemSize.create(item_id: '6', category_size_id: '9', cost: '0', price: '3.00',user_id: '1')
+
+ItemSize.create(item_id: '7', category_size_id: '10', cost: '0', price: '2.80',user_id: '1')
+
+ItemSize.create(item_id: '8', category_size_id: '10', cost: '0', price: '0.50',user_id: '1')
+
+ItemSize.create(item_id: '9', category_size_id: '4', cost: '0', price: '5.00',user_id: '1')
+ItemSize.create(item_id: '9', category_size_id: '5', cost: '0', price: '6.00',user_id: '1')
+
+ItemAddon.delete_all
+ItemAddon.create(item_id: '1', addon_id: '1', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '1', addon_id: '2', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '1', addon_id: '3', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '1', addon_id: '4', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '1', addon_id: '5', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '1', addon_id: '8', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '1', addon_id: '9', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '1', addon_id: '10', def_addon: '0', def_qty: '0', qty: '0')
+
+ItemAddon.create(item_id: '2', addon_id: '1', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '2', addon_id: '2', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '2', addon_id: '3', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '2', addon_id: '4', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '2', addon_id: '5', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '2', addon_id: '8', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '2', addon_id: '9', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '2', addon_id: '10', def_addon: '0', def_qty: '0', qty: '0')
+
+ItemAddon.create(item_id: '3', addon_id: '1', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '3', addon_id: '2', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '3', addon_id: '3', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '3', addon_id: '4', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '3', addon_id: '5', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '3', addon_id: '8', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '3', addon_id: '9', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '3', addon_id: '10', def_addon: '0', def_qty: '0', qty: '0')
+
+ItemAddon.create(item_id: '9', addon_id: '1', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '9', addon_id: '2', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '9', addon_id: '3', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '9', addon_id: '4', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '9', addon_id: '5', def_addon: '1', def_qty: '1', qty: '1')
+
+ItemAddon.create(item_id: '4', addon_id: '2', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '4', addon_id: '3', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '4', addon_id: '5', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '4', addon_id: '6', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '4', addon_id: '7', def_addon: '0', def_qty: '0', qty: '0')
+
+ItemAddon.create(item_id: '5', addon_id: '2', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '5', addon_id: '3', def_addon: '0', def_qty: '0', qty: '0')
+ItemAddon.create(item_id: '5', addon_id: '5', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '5', addon_id: '7', def_addon: '1', def_qty: '1', qty: '1')
+ItemAddon.create(item_id: '5', addon_id: '6', def_addon: '0', def_qty: '0', qty: '0')

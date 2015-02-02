@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150129161150) do
+ActiveRecord::Schema.define(version: 20150131220645) do
 
   create_table "addon_list_items", force: true do |t|
     t.string   "name"
@@ -95,11 +95,12 @@ ActiveRecord::Schema.define(version: 20150129161150) do
     t.integer  "displayIndex"
     t.integer  "logicIndex"
     t.boolean  "required"
+    t.integer  "allowed_swap_qty"
     t.integer  "group_id"
     t.integer  "user_id"
     t.integer  "addon_list_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_index "group_addon_lists", ["addon_list_id"], name: "index_group_addon_lists_on_addon_list_id"
@@ -111,6 +112,7 @@ ActiveRecord::Schema.define(version: 20150129161150) do
     t.string   "description"
     t.string   "onlineViewLabel"
     t.string   "posViewLabel"
+    t.string   "printViewLabel"
     t.string   "headerImagePath"
     t.integer  "displayIndex"
     t.boolean  "visibleOnline"
@@ -124,14 +126,31 @@ ActiveRecord::Schema.define(version: 20150129161150) do
 
   add_index "groups", ["user_id"], name: "index_groups_on_user_id"
 
-  create_table "item_sizes", force: true do |t|
-    t.string   "name"
+  create_table "item_addons", force: true do |t|
     t.integer  "item_id"
-    t.integer  "user_id"
+    t.integer  "addon_id"
+    t.boolean  "def_addon"
+    t.integer  "def_qty"
+    t.integer  "qty"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "item_addons", ["addon_id"], name: "index_item_addons_on_addon_id"
+  add_index "item_addons", ["item_id"], name: "index_item_addons_on_item_id"
+
+  create_table "item_sizes", force: true do |t|
+    t.string   "name"
+    t.float    "cost"
+    t.float    "price"
+    t.integer  "category_size_id"
+    t.integer  "item_id"
+    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "item_sizes", ["category_size_id"], name: "index_item_sizes_on_category_size_id"
   add_index "item_sizes", ["item_id"], name: "index_item_sizes_on_item_id"
   add_index "item_sizes", ["user_id"], name: "index_item_sizes_on_user_id"
 
@@ -146,13 +165,21 @@ ActiveRecord::Schema.define(version: 20150129161150) do
 
   create_table "items", force: true do |t|
     t.string   "name"
+    t.string   "description"
+    t.string   "onlineViewLabel"
+    t.string   "posViewLabel"
+    t.string   "printLabel"
+    t.string   "imagePath"
+    t.integer  "displayIndex"
+    t.boolean  "visibleOnline"
+    t.boolean  "visibleOnPos"
     t.boolean  "enabled"
     t.boolean  "deleted"
     t.integer  "user_id"
     t.integer  "group_id"
     t.integer  "item_type_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "items", ["group_id"], name: "index_items_on_group_id"

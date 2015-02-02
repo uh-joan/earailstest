@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @item_addon.item %>
+</p>
+
+<p>
+  <strong>Addon:</strong>
+  <%= @item_addon.addon %>
+</p>
+
+<p>
+  <strong>Included:</strong>
+  <%= @item_addon.included %>
+</p>
+
+<p>
+  <strong>Default:</strong>
+  <%= @item_addon.default %>
+</p>
+
+<%= link_to 'Edit', edit_item_addon_path(@item_addon) %> |
+<%= link_to 'Back', item_addons_path %>
