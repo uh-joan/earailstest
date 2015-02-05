@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131220645) do
+ActiveRecord::Schema.define(version: 20150205190545) do
 
   create_table "addon_list_items", force: true do |t|
     t.string   "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150131220645) do
     t.integer  "addon_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "displayIndex"
   end
 
   add_index "addon_list_items", ["user_id"], name: "index_addon_list_items_on_user_id"
@@ -44,7 +45,6 @@ ActiveRecord::Schema.define(version: 20150131220645) do
     t.string   "onlineViewLabel"
     t.string   "printViewLabel"
     t.string   "posViewLabel"
-    t.integer  "displayIndex"
     t.boolean  "visibleOnline"
     t.boolean  "visiblePos"
     t.integer  "user_id"

@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>**Displayindex</th>
       <th>**User</th>
       <th>**Addon list</th>
       <th>**Addon</th>
@@ -17,6 +18,7 @@
     <% @addon_list_items.each do |product_add_on_list_item| %>
       <tr>
         <td><%= product_add_on_list_item.name %></td>
+        <td><%= product_add_on_list_item.displayIndex %></td>
         <td><%= User.find(product_add_on_list_item.user_id).name %></td>
         <td><%= AddonList.find(product_add_on_list_item.addon_list_id).name %></td>
         <td><%= Addon.find(product_add_on_list_item.addon_id).name %></td>

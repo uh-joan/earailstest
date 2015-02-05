@@ -22,25 +22,25 @@ User.delete_all
 
 Addon.delete_all
 Addon.create(name: 'Peperoni', onlineViewLabel: 'Peperoni' , printViewLabel: 'Peperoni', posViewLabel: 'Peperoni',
-             displayIndex: '1', visibleOnline: '1', visiblePos: '1',user_id: '1')
+              visibleOnline: '1', visiblePos: '1',user_id: '1')
 Addon.create(name: 'Onion', onlineViewLabel: 'Onion' , printViewLabel: 'Onion', posViewLabel: 'Onion',
-             displayIndex: '2', visibleOnline: '1', visiblePos: '1',user_id: '1')
+              visibleOnline: '1', visiblePos: '1',user_id: '1')
 Addon.create(name: 'Mushroom', onlineViewLabel: 'Mushroom' , printViewLabel: 'Mush', posViewLabel: 'Mushroom',
-             displayIndex: '3', visibleOnline: '1', visiblePos: '1',user_id: '1')
+              visibleOnline: '1', visiblePos: '1',user_id: '1')
 Addon.create(name: 'Salami', onlineViewLabel: 'Salami' , printViewLabel: 'Salami', posViewLabel: 'Salami',
-             displayIndex: '4', visibleOnline: '1', visiblePos: '1',user_id: '1')
+              visibleOnline: '1', visiblePos: '1',user_id: '1')
 Addon.create(name: 'Tomato', onlineViewLabel: 'Tomato' , printViewLabel: 'Tomato', posViewLabel: 'Tomato',
-             displayIndex: '5', visibleOnline: '1', visiblePos: '1',user_id: '1')
+              visibleOnline: '1', visiblePos: '1',user_id: '1')
 Addon.create(name: 'Ketchup', onlineViewLabel: 'Ketchup' , printViewLabel: 'Ketchup', posViewLabel: 'Ketchup',
-             displayIndex: '1', visibleOnline: '1', visiblePos: '1',user_id: '1')
+              visibleOnline: '1', visiblePos: '1',user_id: '1')
 Addon.create(name: 'Chili Sauce', onlineViewLabel: 'Chili' , printViewLabel: 'Chili', posViewLabel: 'Chili',
-             displayIndex: '2', visibleOnline: '1', visiblePos: '1',user_id: '1')
+              visibleOnline: '1', visiblePos: '1',user_id: '1')
 Addon.create(name: 'Deep Pan', onlineViewLabel: 'Deep Pan' , printViewLabel: 'Deep', posViewLabel: 'Deep Pan',
-             displayIndex: '1', visibleOnline: '1', visiblePos: '1',user_id: '1')
+              visibleOnline: '1', visiblePos: '1',user_id: '1')
 Addon.create(name: 'Thin Crust', onlineViewLabel: 'Thin Crust' , printViewLabel: 'Thin', posViewLabel: 'Thin Crust',
-             displayIndex: '2', visibleOnline: '1', visiblePos: '1',user_id: '1')
+              visibleOnline: '1', visiblePos: '1',user_id: '1')
 Addon.create(name: 'Stuffed Crust', onlineViewLabel: 'Stuffed Crust' , printViewLabel: 'Stuffed', posViewLabel: 'Stuffed Crust',
-             displayIndex: '3', visibleOnline: '1', visiblePos: '1',user_id: '1')
+              visibleOnline: '1', visiblePos: '1',user_id: '1')
 
 
 
@@ -56,19 +56,19 @@ AddonList.create(name: 'Sauces', onlineViewLabel: 'Add Sauces', posViewLabel: 'S
 
 
 AddonListItem.delete_all
-AddonListItem.create(user_id: '1', addon_list_id: '1', addon_id: '1')
-AddonListItem.create(user_id: '1', addon_list_id: '1', addon_id: '2')
-AddonListItem.create(user_id: '1', addon_list_id: '1', addon_id: '3')
-AddonListItem.create(user_id: '1', addon_list_id: '1', addon_id: '4')
-AddonListItem.create(user_id: '1', addon_list_id: '1', addon_id: '5')
-AddonListItem.create(user_id: '1', addon_list_id: '2', addon_id: '2')
-AddonListItem.create(user_id: '1', addon_list_id: '2', addon_id: '3')
-AddonListItem.create(user_id: '1', addon_list_id: '2', addon_id: '5')
-AddonListItem.create(user_id: '1', addon_list_id: '3', addon_id: '8')
-AddonListItem.create(user_id: '1', addon_list_id: '3', addon_id: '9')
-AddonListItem.create(user_id: '1', addon_list_id: '3', addon_id: '10')
-AddonListItem.create(user_id: '1', addon_list_id: '4', addon_id: '6')
-AddonListItem.create(user_id: '1', addon_list_id: '4', addon_id: '7')
+AddonListItem.create(displayIndex: '1',user_id: '1', addon_list_id: '1', addon_id: '1')
+AddonListItem.create(displayIndex: '2',user_id: '1', addon_list_id: '1', addon_id: '2')
+AddonListItem.create(displayIndex: '3',user_id: '1', addon_list_id: '1', addon_id: '3')
+AddonListItem.create(displayIndex: '4',user_id: '1', addon_list_id: '1', addon_id: '4')
+AddonListItem.create(displayIndex: '5',user_id: '1', addon_list_id: '1', addon_id: '5')
+AddonListItem.create(displayIndex: '6',user_id: '1', addon_list_id: '2', addon_id: '2')
+AddonListItem.create(displayIndex: '7',user_id: '1', addon_list_id: '2', addon_id: '3')
+AddonListItem.create(displayIndex: '8',user_id: '1', addon_list_id: '2', addon_id: '5')
+AddonListItem.create(displayIndex: '9',user_id: '1', addon_list_id: '3', addon_id: '8')
+AddonListItem.create(displayIndex: '10',user_id: '1', addon_list_id: '3', addon_id: '9')
+AddonListItem.create(displayIndex: '11',user_id: '1', addon_list_id: '3', addon_id: '10')
+AddonListItem.create(displayIndex: '12',user_id: '1', addon_list_id: '4', addon_id: '6')
+AddonListItem.create(displayIndex: '13',user_id: '1', addon_list_id: '4', addon_id: '7')
 
 
 Group.delete_all

@@ -4,7 +4,10 @@
   <strong>Name:</strong>
   <%= @addon_list_item.name %>
 </p>
-
+<p>
+  <strong>Displayindex:</strong>
+  <%= @addon_list_item.displayIndex %>
+</p>
 <p>
   <strong>User:</strong>
   <%= User.find(@addon_list_item.user_id).name %>

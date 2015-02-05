@@ -69,6 +69,6 @@ class AddonListItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_add_on_list_item_params
-      params.require(:addon_list_item).permit(:name, :user_id, :addon_list_id, :addon_id)
+      params.require(:addon_list_item).permit(:name, :user_id, :displayIndex, :addon_list_id, :addon_id)
     end
 end
